@@ -1,0 +1,247 @@
+<h1 class="ui header">Button</h1>
+
+<smt-divider></smt-divider>
+
+<h4 class="ui header">Api button</h4>
+
+<a smt-button [color]="'red'" [api]="apiInfo" (complete)="onCompleteApi($event)">Find users paginate api</a>
+<b *ngIf="apiInfo.status == 'start'">Click on button for api button example...</b>
+<b *ngIf="apiInfo.status == 'wait'">Please wait...</b>
+<b *ngIf="apiInfo.status == 'completed'">Completed ! Show results on console...</b>
+
+<h4 class="ui header">Icons</h4>
+
+<a smt-button [icon]="'settings'">Settings</a>
+<a smt-button [icon]="'shop'">Shop</a>
+<a smt-button [icon]="'tags'">Tags</a>
+<a smt-button [icon]="'settings'" [iconOnly]="true"></a>
+<a smt-button [icon]="'shop'" [iconOnly]="true"></a>
+<a smt-button [icon]="'tags'" [iconOnly]="true"></a>
+
+<h4 class="ui header">Animated</h4>
+
+<a smt-button [animated]="true">
+    <visible>Next</visible>
+    <hidden>
+        <i smt-icon="right arrow"></i>
+    </hidden>
+</a>
+
+<a smt-button [animated]="{vertical: true}">
+    <visible>
+        <i smt-icon="shop"></i>
+    </visible>
+    <hidden>Shop</hidden>
+</a>
+
+<a smt-button [animated]="{fade: true}">
+    <visible>Sign-up a Pro account</visible>
+    <hidden>$12.99 a month</hidden>
+</a>
+
+<h4 class="ui header">Colors</h4>
+
+<a smt-button>Normal</a>
+<a smt-button *ngFor="let emphasis of lists.emphasis" [color]="emphasis">{{emphasis | capitalize}}</a>
+<a smt-button *ngFor="let color of lists.color" [color]="color">{{color | capitalize}}</a>
+
+<h4 class="ui header">States</h4>
+
+<a smt-button [color]="'primary'" [active]="true">Active</a>
+<a smt-button [color]="'primary'" [disabled]="true">Disabled</a>
+<a smt-button [color]="'primary'" [loading]="true">Loading</a>
+
+<h4 class="ui header">Basic</h4>
+
+<a smt-button [basic]="true">Basic</a>
+<a smt-button [basic]="true" [color]="'red'">Red</a>
+<a smt-button [basic]="true" [icon]="'user'">Add friend</a>
+
+<h4 class="ui header">Sizes</h4>
+
+<a smt-button *ngFor="let size of lists.size" [color]="'teal'" [size]="size">{{size | capitalize}}</a>
+
+<h4 class="ui header">Circular</h4>
+
+<a smt-button [circular]="true" [icon]="'settings'"></a>
+<a smt-button [circular]="true" [icon]="'shop'" [basic]="true"></a>
+<a smt-button [circular]="true" [icon]="'tags'" [basic]="true" [color]="'red'"></a>
+
+<h4 class="ui header">Socials</h4>
+
+<a smt-button *ngFor="let social of lists.social" [social]="social">{{social | capitalize}}</a>
+<smt-divider [hide]="true"></smt-divider>
+<a smt-button *ngFor="let social of lists.social" [social]="social" [circular]="true"></a>
+
+<h4 class="ui header">Fluid</h4>
+
+<a smt-button [fluid]="true">Fluid (full width) button</a>
+
+<h4 class="ui header">Labeled</h4>
+
+<a smt-button [labeled]="true">
+    <a smt-button [color]="'red'" [icon]="'heart'">Like</a>
+    <a smt-label [basic]="true" [pointing]="{direction : 'left'}" [color]="'red'">
+        1,048
+    </a>
+</a>
+
+<a smt-button [labeled]="true">
+    <a smt-button [basic]="true" [color]="'blue'" [icon]="'fork'">Forks</a>
+    <a smt-label [basic]="true" [pointing]="{direction : 'left'}" [color]="'blue'">
+        1,048
+    </a>
+</a>
+
+<a smt-button [labeled]="true" [icon]="'pause'">
+    Pause
+</a>
+
+<a smt-button [labeled]="{right: true}" [icon]="'right arrow'">
+    Next
+</a>
+
+<h4 class="ui header">Inverted</h4>
+
+<div smt-segment [inverted]="true">
+    <a smt-button [inverted]="true">Standard</a>
+    <a smt-button *ngFor="let color of lists.color" [inverted]="true" [color]="color">{{color | capitalize}}</a>
+</div>
+<smt-divider [hide]="true"></smt-divider>
+<div smt-segment [inverted]="true">
+    <a smt-button [inverted]="true" [basic]="true">Basic</a>
+    <a smt-button *ngFor="let color of lists.color" [inverted]="true" [basic]="true" [color]="color">{{color | capitalize}}</a>
+</div>
+
+<h4 class="ui header">Conditional</h4>
+
+<smt-button-group [conditional]="true">
+    <a smt-button data-first>Cancel</a>
+    <a smt-button data-last [color]="'positive'">Save</a>
+</smt-button-group>
+
+<smt-button-group [conditional]="{orLabel : 'ou'}">
+    <a smt-button data-first>Un</a>
+    <a smt-button data-last [color]="'positive'">Deux</a>
+</smt-button-group>
+
+<h4 class="ui header">Compact</h4>
+
+<a smt-button [compact]="true">Hold</a>
+<a smt-button [compact]="true" [icon]="'pause'" [iconOnly]="true"></a>
+<a smt-button [compact]="true" [labeled]="true" [icon]="'pause'">Pause</a>
+
+<h4 class="ui header">Floated</h4>
+
+<div smt-segment [clearing]="true">
+    <a smt-button [floated]="'left'">Left</a>
+    <a smt-button [floated]="'right'">Right</a>
+</div>
+
+<h4 class="ui header">Vertically attached</h4>
+
+<a smt-button [attached]="'top'">Top</a>
+<div smt-segment [attached]="true">Attached segment</div>
+<a smt-button [attached]="'bottom'">Bottom</a>
+
+<h4 class="ui header">Horizontally attached</h4>
+
+<button smt-button [attached]="'left'">Left</button>
+<button smt-button [attached]="'right'">Right</button>
+
+<h2 class="ui header">Button groups</h2>
+
+<h4 class="ui header">Vertical buttons</h4>
+
+<smt-button-group [vertical]="true">
+    <a smt-button>Feed</a>
+    <a smt-button>Messages</a>
+    <a smt-button>Events</a>
+    <a smt-button>Photos</a>
+</smt-button-group>
+
+<h4 class="ui header">Icon buttons</h4>
+
+<smt-button-group [icon]="true">
+    <button smt-button [icon]="'play'"></button>
+    <button smt-button [icon]="'pause'"></button>
+    <button smt-button [icon]="'shuffle'"></button>
+</smt-button-group>
+
+<h4 class="ui header">Labeled icon buttons</h4>
+
+<smt-button-group [vertical]="true" [labeled]="true" [icon]="true">
+    <a smt-button [icon]="'pause'">Pause</a>
+    <a smt-button [icon]="'play'">Play</a>
+    <a smt-button [icon]="'shuffle'">Shuffle</a>
+</smt-button-group>
+
+<h4 class="ui header">Mixed group</h4>
+
+<smt-button-group>
+    <button smt-button [labeled]="true" [icon]="'left chevron'">Back</button>
+    <button smt-button [icon]="'stop'">Stop</button>
+    <button smt-button [labeled]="{right: true}" [icon]="'right chevron'">Forward</button>
+</smt-button-group>
+
+<h4 class="ui header">Equal width</h4>
+
+<smt-button-group [number]="5">
+    <button smt-button>Overview</button>
+    <button smt-button>Specs</button>
+    <button smt-button>Warranty</button>
+    <button smt-button>Reviews</button>
+    <button smt-button>Support</button>
+</smt-button-group>
+<smt-button-group [number]="3">
+    <button smt-button>Overview</button>
+    <button smt-button>Specs</button>
+    <button smt-button>Support</button>
+</smt-button-group>
+
+<h4 class="ui header">Colored buttons</h4>
+
+<smt-button-group [color]="'blue'">
+    <a smt-button>One</a>
+    <a smt-button>Two</a>
+    <a smt-button>Three</a>
+</smt-button-group>
+
+<h4 class="ui header">Basic buttons</h4>
+
+<smt-button-group [basic]="true">
+    <a smt-button>One</a>
+    <a smt-button>Two</a>
+    <a smt-button>Three</a>
+</smt-button-group>
+<smt-button-group>
+    <a smt-button [basic]="true" [color]="'red'">One</a>
+    <a smt-button [basic]="true" [color]="'blue'">Two</a>
+    <a smt-button [basic]="true" [color]="'green'">Three</a>
+</smt-button-group>
+<smt-divider [hide]="true"></smt-divider>
+<smt-button-group [basic]="true" [vertical]="true">
+    <a smt-button>One</a>
+    <a smt-button>Two</a>
+    <a smt-button>Three</a>
+</smt-button-group>
+
+<h4 class="ui header">Group sizes</h4>
+
+<smt-button-group [size]="'large'">
+    <a smt-button>One</a>
+    <a smt-button>Two</a>
+    <a smt-button>Three</a>
+</smt-button-group>
+
+<smt-button-group [size]="'small'" [basic]="true" [icon]="true">
+    <a smt-button [icon]="'file'"></a>
+    <a smt-button [icon]="'save'"></a>
+    <a smt-button [icon]="'upload'"></a>
+    <a smt-button [icon]="'download'"></a>
+</smt-button-group>
+
+<smt-button-group [size]="'tiny'" [conditional]="true">
+    <button smt-button data-first>One</button>
+    <button smt-button data-last>Two</button>
+</smt-button-group>

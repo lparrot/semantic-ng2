@@ -1,0 +1,9 @@
+{
+  "mongodb_url": "mongodb://localhost:27017/semantic-ng2",
+  "port": 3000,
+  "secret_key": "semantic-ng2",
+  "token_header_id": "Authorization",
+  "models_directory": "./models",
+  "routes_directory": "./routes",
+  "routes_prefix": "/api"
+}

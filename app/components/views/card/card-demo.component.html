@@ -1,0 +1,77 @@
+<h1 class="ui header">Card</h1>
+
+<smt-divider></smt-divider>
+
+<h4 class="ui header">Card alone</h4>
+
+<smt-card [color]="'red'">
+    <smt-card-image [image]="cards[0].photo"></smt-card-image>
+    <smt-card-content [header]="cards[0].header">
+        <smt-card-meta [floated]="'right'">
+            <a>Married with</a>
+            <img class="ui avatar image" src="/app/assets/img/semantic/avatar/small/elliot.jpg"> Elliot
+        </smt-card-meta>
+    </smt-card-content>
+    <smt-card-extra>
+        <smt-button-group [number]="2">
+            <a smt-button [color]="'primary'">Validate</a>
+            <a smt-button [color]="'negative'">Delete</a>
+        </smt-button-group>
+    </smt-card-extra>
+</smt-card>
+
+<h4 class="ui header">Card group</h4>
+
+<smt-card-group>
+    <smt-card>
+        <smt-card-content [header]="cards.header1">
+            <smt-card-meta>
+                <a>Developer</a>
+            </smt-card-meta>
+            <span>Content here...</span>
+        </smt-card-content>
+        <smt-card-image [image]="cards[1].photo"></smt-card-image>
+        <smt-card-content [header]="cards[1].header">
+            <smt-card-meta>
+                <span>1st in France</span>
+            </smt-card-meta>
+            <span>Content here...</span>
+        </smt-card-content>
+        <smt-card-extra>
+            <a>
+                <i smt-icon="users"></i>
+                <span>Show users</span>
+            </a>
+        </smt-card-extra>
+    </smt-card>
+    <smt-card>
+        <smt-card-content [header]="cards[2].header1">
+            <smt-card-meta>
+                <a>Rank : 1st</a>
+            </smt-card-meta>
+            <span>Content here...</span>
+        </smt-card-content>
+        <smt-card-content [header]="cards[2].header2">
+            <smt-card-meta>
+                <span>Rank : 2nd</span>
+            </smt-card-meta>
+            <span>Content here...</span>
+        </smt-card-content>
+        <smt-card-extra>
+            <smt-button-group [number]="2">
+                <a smt-button [basic]="true" [color]="'blue'">Ok</a>
+                <a smt-button [basic]="true" [color]="'red'">Reset</a>
+            </smt-button-group>
+        </smt-card-extra>
+    </smt-card>
+    <smt-card>
+        <smt-card-content [header]="cards[3].header">
+            <smt-card-meta>
+                <a>Manager</a>
+            </smt-card-meta>
+            <span>Content here...</span>
+        </smt-card-content>
+        <smt-card-image [image]="cards[3].photo"></smt-card-image>
+        <a smt-button [attached]="'bottom'" [color]="'primary'">Extra content</a>
+    </smt-card>
+</smt-card-group>

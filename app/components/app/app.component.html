@@ -1,0 +1,25 @@
+<smt-menu [fixed]="true" [inverted]="true" [compact]="true" [delimited]="false" [color]="'blue'" [fitted]="{direction: 'vertical'}">
+    <a smt-menu-item [header]="true" [routerLink]="['HomeDemo']">
+        <img class="ui middle aligned image" src="/app/assets/img/logo.png" height="30">
+        <span>Semantic-NG2</span>
+    </a>
+    <a smt-menu-item [right]="true" (click)="sidebar.toggle()">
+        <i class="icon sidebar"></i>
+    </a>
+</smt-menu>
+
+<smt-sidebar #sidebar [position]="'right'">
+    <smt-menu [color]="'blue'" [vertical]="true" [inverted]="true"></smt-menu>
+    <div smt-menu-block-item>
+        <div class="ui center aligned basic segment sidebar-logo">
+            <img class="ui bottom aligned image" src="/app/assets/img/logo.png">
+        </div>
+    </div>
+    <div smt-menu-block-item *ngFor="let menu of menus" [header]="menu.header">
+        <a *ngFor="let item of menu.menuItems" smt-menu-item [routerLink]="item.route">{{item.label}}</a>
+    </div>
+</smt-sidebar>
+
+<div class="ui basic segment">
+    <router-outlet></router-outlet>
+</div>

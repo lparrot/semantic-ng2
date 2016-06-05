@@ -1,0 +1,12 @@
+.idea/**/*
+.vscode/**/*
+node_modules/**/*
+typings/**/*
+vendors/**/*
+build/**/*
+app/**/*.js
+src/**/*.js
+semantic-ng2.js
+*.log
+*.map
+*.d.ts

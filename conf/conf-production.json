@@ -1,0 +1,9 @@
+{
+  "mongodb_url": "mongodb://semantic-ng2:123456@ds023373.mlab.com:23373/heroku_fsf1kwsh",
+  "port": 3000,
+  "secret_key": "semantic-ng2",
+  "token_header_id": "Authorization",
+  "models_directory": "./models",
+  "routes_directory": "./routes",
+  "routes_prefix": "/api"
+}

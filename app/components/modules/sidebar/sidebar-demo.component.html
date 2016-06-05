@@ -1,0 +1,25 @@
+<h1 class="ui header">Sidebar</h1>
+
+<smt-divider></smt-divider>
+
+<button smt-button [color]="'primary'" (click)="sidebarTop.toggle()">Show sidebar</button>
+
+<smt-sidebar #sidebarTop [position]="'top'" (changeEvent)="changeEvent()" (hiddenEvent)="hiddenEvent()" (hideEvent)="hideEvent()" (showEvent)="showEvent()" (visibleEvent)="visibleEvent()">
+    <smt-menu [inverted]="true" [icon]="true" [labeled]="true"></smt-menu>
+    <a smt-menu-item>
+        <i smt-icon="users"></i>
+        <span>Users</span>
+    </a>
+    <a smt-menu-item>
+        <i smt-icon="gamepad"></i>
+        <span>Games</span>
+    </a>
+    <a smt-menu-item>
+        <i smt-icon="camera"></i>
+        <span>Channels</span>
+    </a>
+    <a smt-menu-item>
+        <i smt-icon="play"></i>
+        <span>Videos</span>
+    </a>
+</smt-sidebar>

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "system",
+    "target": "es5",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "outFile": "semantic-ng2.js"
+  },
+  "files": [
+    "semantic-ng2.ts",
+    "typings/main.d.ts"
+  ]
+}

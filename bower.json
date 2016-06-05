@@ -1,0 +1,11 @@
+{
+  "name": "semantic-ng2",
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "semantic": "semantic-ui#^2.1.8",
+    "lodash": "^4.11.2",
+    "JavaScript-MD5": "^2.3.0",
+    "faker": "Marak/faker.js#^3.1.0",
+    "toastr": "^2.1.2"
+  }
+}

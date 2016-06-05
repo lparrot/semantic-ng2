@@ -1,0 +1,130 @@
+<h1 class="ui header">Accordion</h1>
+
+<smt-divider></smt-divider>
+
+<h4 class="ui header">Simple</h4>
+
+<smt-accordion>
+    <smt-accordion-item [title]="'What is a dog?'">
+        <p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
+    </smt-accordion-item>
+    <smt-accordion-item [title]="'What kinds of dogs are there?'">
+        <p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
+    </smt-accordion-item>
+    <smt-accordion-item [title]="'How do you acquire a dog?'">
+        <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+        <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+    </smt-accordion-item>
+</smt-accordion>
+
+<h4 class="ui header">Styled</h4>
+
+<smt-accordion [styled]="true">
+    <smt-accordion-item [title]="'What is a dog?'">
+        <p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
+    </smt-accordion-item>
+    <smt-accordion-item [title]="'What kinds of dogs are there?'">
+        <p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
+    </smt-accordion-item>
+    <smt-accordion-item [title]="'How do you acquire a dog?'">
+        <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+        <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+    </smt-accordion-item>
+</smt-accordion>
+
+<h4 class="ui header">Fluid</h4>
+
+<smt-accordion [styled]="true" [fluid]="true">
+    <smt-accordion-item [title]="'What is a dog?'">
+        <p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
+    </smt-accordion-item>
+    <smt-accordion-item [title]="'What kinds of dogs are there?'">
+        <p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
+    </smt-accordion-item>
+    <smt-accordion-item [title]="'How do you acquire a dog?'">
+        <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+        <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+    </smt-accordion-item>
+</smt-accordion>
+
+<h4 class="ui header">Inverted</h4>
+
+<div smt-segment [inverted]="true">
+    <smt-accordion [inverted]="true">
+        <smt-accordion-item [title]="'What is a dog?'">
+            <p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
+        </smt-accordion-item>
+        <smt-accordion-item [title]="'What kinds of dogs are there?'">
+            <p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
+        </smt-accordion-item>
+        <smt-accordion-item [title]="'How do you acquire a dog?'">
+            <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+            <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+        </smt-accordion-item>
+    </smt-accordion>
+</div>
+
+<h4 class="ui header">Nested</h4>
+
+<smt-accordion [styled]="true">
+    <smt-accordion-item [title]="'Level 1A'">
+        <span>Level 1A Contents</span>
+        <smt-accordion>
+            <smt-accordion-item [title]="'Level 1A-A'">
+                Level 1A-A Contents
+            </smt-accordion-item>
+            <smt-accordion-item [title]="'Level 1A-B'">
+                Level 1A-B Contents
+                <smt-accordion>
+                    <smt-accordion-item [title]="'Level 1A-A'">
+                        Level 1A-B-A Contents
+                    </smt-accordion-item>
+                    <smt-accordion-item [title]="'Level 1A-A'">
+                        Level 1A-B-B Contents
+                    </smt-accordion-item>
+                    <smt-accordion-item [title]="'Level 1A-A'">
+                        Level 1A-B-C Contents
+                    </smt-accordion-item>
+                </smt-accordion>
+            </smt-accordion-item>
+        </smt-accordion>
+    </smt-accordion-item>
+    <smt-accordion-item [title]="'Level 1B'">
+        Level 1B Contents
+    </smt-accordion-item>
+</smt-accordion>
+
+<h4 class="ui header">Field</h4>
+
+<div smt-segment>
+    <div class="ui form">
+        <div class="two fields">
+            <div class="field">
+                <label>First Name</label>
+                <input placeholder="First Name" type="text">
+            </div>
+            <div class="field">
+                <label>Last Name</label>
+                <input placeholder="Last Name" type="text">
+            </div>
+        </div>
+        <smt-accordion [field]="true">
+            <smt-accordion-item [title]="'Optional Details'">
+                <label>Maiden Name</label>
+                <input placeholder="Maiden Name" type="text">
+            </smt-accordion-item>
+        </smt-accordion>
+        <div class="ui secondary submit button">Sign Up</div>
+    </div>
+</div>
+
+<h4 class="ui header">Events</h4>
+
+<smt-accordion [styled]="true" (changeEvent)="changeEvent($event)" (closingEvent)="closingEvent($event)" (closeEvent)="closeEvent($event)" (openEvent)="openEvent($event)" (openingEvent)="openingEvent($event)">
+    <smt-accordion-item [title]="'Titre 1'">
+        <span>Contenu 1</span>
+    </smt-accordion-item>
+    <smt-accordion-item [title]="'Titre 2'">
+        <span>Contenu 2</span>
+    </smt-accordion-item>
+</smt-accordion>

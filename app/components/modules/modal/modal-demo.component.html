@@ -1,0 +1,43 @@
+<h1 class="ui header">Modal</h1>
+
+<smt-divider></smt-divider>
+
+<button smt-button [color]="'primary'" (click)="simpleModal.show()">Show simple modal</button>
+<button smt-button [color]="'primary'" (click)="basicModal.show()">Show basic modal</button>
+<button smt-button [color]="'primary'" (click)="eventModal.show()">Show event modal</button>
+
+<div smt-modal #simpleModal>
+    <div class="header">Modal header</div>
+    <div class="content">
+        <p>This is a simple modal.</p>
+    </div>
+    <div class="actions">
+        <button smt-button [color]="'positive'">Approve</button>
+        <button smt-button [color]="'primary'">Neutral</button>
+        <button smt-button [color]="'negative'">Cancel</button>
+    </div>
+</div>
+
+<div smt-modal #basicModal [basic]="true">
+    <div class="header">Modal header</div>
+    <div class="content">
+        <p>This is a simple modal.</p>
+    </div>
+    <div class="actions">
+        <button smt-button [color]="'positive'">Approve</button>
+        <button smt-button [color]="'primary'">Neutral</button>
+        <button smt-button [color]="'negative'">Cancel</button>
+    </div>
+</div>
+
+<div smt-modal #eventModal (approveEvent)="approveEvent($event)" (denyEvent)="denyEvent($event)" (hiddenEvent)="hiddenEvent($event)" (hideEvent)="hideEvent($event)" (showEvent)="showEvent($event)" (visibleEvent)="visibleEvent($event)">
+    <div class="header">Modal header</div>
+    <div class="content">
+        <p>This is a simple modal.</p>
+    </div>
+    <div class="actions">
+        <button smt-button [color]="'positive'">Approve</button>
+        <button smt-button [color]="'primary'">Neutral</button>
+        <button smt-button [color]="'negative'">Cancel</button>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+{
+  "urls": [
+    {
+      "name": "get all user",
+      "url": "/users"
+    },
+    {
+      "name": "get paginated user",
+      "url": "/users/search"
+    },
+    {
+      "name": "get user",
+      "url": "/users/{id}"
+    },
+    {
+      "name": "get all profil",
+      "url": "/profils"
+    }
+  ]
+}

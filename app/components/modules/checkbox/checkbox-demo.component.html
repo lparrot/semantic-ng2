@@ -1,0 +1,47 @@
+<h1 class="ui header">Checkbox</h1>
+
+<smt-divider></smt-divider>
+
+<h4 class="ui header">Simple</h4>
+
+<smt-checkbox [label]="'Check for purchase'" [(model)]="itemChecked"></smt-checkbox>
+<smt-divider [hide]="true"></smt-divider>
+<span class="ui label" [ngClass]="{green: itemChecked, red:!itemChecked}">{{itemChecked ? 'Checked' : 'Unchecked'}}</span>
+
+<h4 class="ui header">Radio</h4>
+
+<smt-checkbox [radio]="true" [value]="'radio_choice'" [(model)]="itemRadio" [label]="'Radio choice'"></smt-checkbox>
+<smt-divider [hide]="true"></smt-divider>
+<span class="ui label">Selected : {{itemRadio ? itemRadio : 'None'}}</span>
+
+<h4 class="ui header">Radio list</h4>
+
+<smt-checkbox-radio-list [name]="'frequency'" [(model)]="itemRadioList">
+    <div class="field">
+        <smt-checkbox [value]="'once_week'" [label]="'Once a week'"></smt-checkbox>
+    </div>
+    <div class="field">
+        <smt-checkbox [value]="'2_3_times_week'" [label]="'2-3 times a week'"></smt-checkbox>
+    </div>
+    <div class="field">
+        <smt-checkbox [value]="'once_day'" [label]="'Once a day'"></smt-checkbox>
+    </div>
+    <div class="field">
+        <smt-checkbox [value]="'twice_day'" [label]="'Twice a day'"></smt-checkbox>
+    </div>
+</smt-checkbox-radio-list>
+<smt-divider [hide]="true"></smt-divider>
+<span class="ui label">Selected : {{itemRadioList ? itemRadioList : 'None'}}</span>
+
+<h4 class="ui header">Checkbox style</h4>
+
+<smt-checkbox [label]="'Slider'" [checkboxStyle]="'slider'"></smt-checkbox>
+<smt-divider [hide]="true"></smt-divider>
+<smt-checkbox [label]="'Toggle'" [checkboxStyle]="'toggle'"></smt-checkbox>
+
+<h4 class="ui header">Checkbox events</h4>
+
+<smt-checkbox [label]="'Event'"
+              (changeEvent)="changeEvent()" (beforeCheckedEvent)="beforeCheckedEvent()" (beforeDeterminateEvent)="beforeDeterminateEvent()" (beforeIndeterminateEvent)="beforeIndeterminateEvent()"
+              (beforeUncheckedEvent)="beforeUncheckedEvent()" (checkedEvent)="checkedEvent()" (determinateEvent)="determinateEvent()" (disableEvent)="disableEvent()"
+              (enableEvent)="enableEvent()" (indeterminateEvent)="indeterminateEvent()" (uncheckedEvent)="uncheckedEvent()"></smt-checkbox>

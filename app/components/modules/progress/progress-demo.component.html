@@ -1,0 +1,66 @@
+<h1 class="ui header">Progress</h1>
+
+<smt-divider></smt-divider>
+
+<h4 class="ui header">Simple</h4>
+
+<smt-progress #progress1 [value]="value1" [total]="100" [label]="'Simple progress bar (Total:{total} / Value:{value} / Percent:{percent} / Left:{left})'"></smt-progress>
+
+<h4 class="ui header">Indicating</h4>
+
+<smt-progress #progress2 [(value)]="value2" [label]="'Indicating (Total:{total} / Value:{value} / Percent:{percent} / Left:{left})'" [indicating]="true"></smt-progress>
+
+<h2 class="ui header">States</h2>
+
+<h4 class="ui header">Success</h4>
+
+<smt-progress [value]="100" [state]="'success'" [label]="'Success: Everything worked, your file is all ready.'"></smt-progress>
+
+<h4 class="ui header">Warning</h4>
+
+<smt-progress [value]="100" [state]="'warning'" [label]="'Warning: Your file didn\'t meet the minimum resolution requirements.'"></smt-progress>
+
+<h4 class="ui header">Error</h4>
+
+<smt-progress [value]="100" [state]="'error'" [label]="'Error: There was an error.'"></smt-progress>
+
+<h4 class="ui header">Disabled</h4>
+
+<smt-progress [value]="25" [state]="'disabled'"></smt-progress>
+
+<h2 class="ui header">Variations</h2>
+
+<h4 class="ui header">Inverted</h4>
+
+<div smt-segment [inverted]="true">
+    <smt-progress [inverted]="true" [value]="20" [label]="'Uploading Files'"></smt-progress>
+    <smt-progress [inverted]="true" [value]="100" [label]="'Success'" [state]="'success'"></smt-progress>
+    <smt-progress [inverted]="true" [value]="100" [label]="'Warning'" [state]="'warning'"></smt-progress>
+    <smt-progress [inverted]="true" [value]="100" [label]="'Error'" [state]="'error'"></smt-progress>
+</div>
+
+<h4 class="ui header">Attached</h4>
+
+<div smt-segment>
+    <smt-progress [attached]="'top'" [(value)]="value1"></smt-progress>
+    <p>La la la la la</p>
+    <smt-progress [attached]="'bottom'" [(value)]="value2"></smt-progress>
+</div>
+
+<h4 class="ui header">Size</h4>
+
+<smt-progress [size]="'tiny'" [label]="'Tiny'"></smt-progress>
+<smt-progress [size]="'small'" [label]="'Small'"></smt-progress>
+<smt-progress [label]="'Standard'"></smt-progress>
+<smt-progress [size]="'large'" [label]="'Large'"></smt-progress>
+<smt-progress [size]="'big'" [label]="'Big'"></smt-progress>
+
+<h4 class="ui header">Color</h4>
+
+<smt-progress [value]="20" *ngFor="let color of lists.color" [color]="color"></smt-progress>
+
+<h4 class="ui header">Inverted color</h4>
+
+<div smt-segment [inverted]="true">
+    <smt-progress [value]="20" [inverted]="true" *ngFor="let color of lists.color" [color]="color"></smt-progress>
+</div>
