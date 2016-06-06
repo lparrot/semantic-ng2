@@ -4,33 +4,63 @@ import { NotificationService } from "../../../../src/services/notification/notif
 import { SHARED_DIRECTIVES } from "../../shared/index";
 
 @Component({
-    selector: 'sidebar-demo',
+    selector: "sidebar-demo",
     templateUrl: `/app/components/modules/sidebar/sidebar-demo.component.html`,
     directives: [ SMT_DIRECTIVES, SHARED_DIRECTIVES ]
 })
 export class SidebarDemoComponent {
 
+    public position:string = "left";
+    public transition:string = "overlay";
+    public events:boolean = false;
+
     constructor(private notification:NotificationService) {
     }
 
+    activeEvents(active:boolean) {
+        this.events = active;
+    }
+
     changeEvent(event) {
-        this.notification.showInfo("Fired : changeEvent");
+        if (this.events) {
+            this.notification.showInfo("Fired : changeEvent");
+        }
     }
 
     hiddenEvent(event) {
-        this.notification.showInfo("Fired : hiddenEvent");
+        if (this.events) {
+            this.notification.showInfo("Fired : hiddenEvent");
+        }
     }
 
     hideEvent(event) {
-        this.notification.showInfo("Fired : hideEvent");
+        if (this.events) {
+            this.notification.showInfo("Fired : hideEvent");
+        }
+    }
+
+    isVertical() {
+        return this.position == "left" || this.position == "right";
+    }
+
+    selectPosition(position:string) {
+        this.position = position;
+    }
+
+    selectTransition(transition:string) {
+        this.transition = transition;
     }
 
     showEvent(event) {
-        this.notification.showInfo("Fired : showEvent");
+        if (this.events) {
+            this.notification.showInfo("Fired : showEvent");
+        }
     }
 
     visibleEvent(event) {
-        this.notification.showInfo("Fired : visibleEvent");
+        if (this.events) {
+            this.notification.showInfo("Fired : visibleEvent");
+        }
     }
 
 }

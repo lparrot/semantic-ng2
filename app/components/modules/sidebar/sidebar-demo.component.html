@@ -1,9 +1,35 @@
 <demo-header [title]="'Sidebar'" [site]="'modules/sidebar.html'" [wiki]="'Sidebar'"></demo-header>
 
-<button smt-button [color]="'primary'" (click)="sidebarTop.toggle()">Show sidebar</button>
+<h4 class="ui header">Position</h4>
 
-<smt-sidebar #sidebarTop [position]="'top'" (changeEvent)="changeEvent()" (hiddenEvent)="hiddenEvent()" (hideEvent)="hideEvent()" (showEvent)="showEvent()" (visibleEvent)="visibleEvent()">
-    <smt-menu [inverted]="true" [icon]="true" [labeled]="true"></smt-menu>
+<smt-button-group>
+    <button smt-button [active]="position == 'left'" (click)="selectPosition('left')">Left</button>
+    <button smt-button [active]="position == 'right'" (click)="selectPosition('right')">Right</button>
+    <button smt-button [active]="position == 'top'" (click)="selectPosition('top')">Top</button>
+    <button smt-button [active]="position == 'bottom'" (click)="selectPosition('bottom')">Bottom</button>
+</smt-button-group>
+
+<h4 class="ui header">Transition</h4>
+
+<smt-button-group>
+    <button smt-button [active]="transition == 'overlay'" (click)="selectTransition('overlay')">Overlay</button>
+    <button smt-button [active]="transition == 'push'" (click)="selectTransition('push')">Push</button>
+    <button smt-button [active]="transition == 'scale down'" (click)="selectTransition('scale down')">Scale down</button>
+</smt-button-group>
+
+<h4 class="ui header">Events</h4>
+
+<smt-button-group>
+    <button smt-button [active]="events" (click)="activeEvents(true)">Show events</button>
+    <button smt-button [active]="!events" (click)="activeEvents(false)">Hide events</button>
+</smt-button-group>
+
+<div class="ui hidden divider"></div>
+
+<button smt-button [color]="'primary'" (click)="sidebarDemo.toggle()">Show sidebar</button>
+
+<smt-sidebar #sidebarDemo [position]="position" [transition]="transition" (changeEvent)="changeEvent()" (hiddenEvent)="hiddenEvent()" (hideEvent)="hideEvent()" (showEvent)="showEvent()" (visibleEvent)="visibleEvent()">
+    <smt-menu [inverted]="true" [icon]="true" [vertical]="isVertical()" [labeled]="true"></smt-menu>
     <a smt-menu-item>
         <i smt-icon="users"></i>
         <span>Users</span>
