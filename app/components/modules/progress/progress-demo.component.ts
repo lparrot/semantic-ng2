@@ -2,11 +2,12 @@ import { Component } from "@angular/core";
 import { SMT_DIRECTIVES } from "../../../../src/index";
 import { NotificationService } from "../../../../src/services/notification/notification.service";
 import { ConstUtil } from "../../../../src/core/util/const.util";
+import { SHARED_DIRECTIVES } from "../../shared/index";
 
 @Component({
     selector: 'progress-demo',
     templateUrl: `/app/components/modules/progress/progress-demo.component.html`,
-    directives: [ SMT_DIRECTIVES ]
+    directives: [ SMT_DIRECTIVES, SHARED_DIRECTIVES ]
 })
 export class ProgressDemoComponent {
 

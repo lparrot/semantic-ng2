@@ -1,8 +1,4 @@
-<h1 class="ui header">Datatable
-    <div class="sub header">In progress...</div>
-</h1>
-
-<smt-divider></smt-divider>
+<demo-header [title]="'Datatable (in progress...)'" [wiki]="'Datatable'"></demo-header>
 
 <smt-datatable [name]="'datatable_users'" [info]="datatableInfo" [selectable]="true" [saveState]="true" [(selected)]="user" (selectedChange)="onSelect($event)"></smt-datatable>
 

@@ -3,11 +3,12 @@ import { SMT_DIRECTIVES } from "../../../../src/index";
 import { DatatableInfo } from "../../../../src/components/datatable/model/datatable-info.model";
 import { DatatableField } from "../../../../src/components/datatable/model/datatable-field.model";
 import { NotificationService } from "../../../../src/services/notification/notification.service";
+import { SHARED_DIRECTIVES } from "../../shared/index";
 
 @Component({
     selector: 'datatable-demo',
     templateUrl: `/app/components/customs/datatable/datatable-demo.component.html`,
-    directives: [ SMT_DIRECTIVES ]
+    directives: [ SMT_DIRECTIVES, SHARED_DIRECTIVES ]
 })
 export class DatatableDemoComponent {
 
