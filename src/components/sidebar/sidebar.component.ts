@@ -27,6 +27,8 @@ export class SidebarComponent implements OnChanges {
 
     menuClasses:string[];
 
+    options:any = {};
+
     @ContentChild(forwardRef(() => MenuComponent)) menu:MenuComponent;
 
     @HostBinding('class') classes:string;
@@ -58,6 +60,15 @@ export class SidebarComponent implements OnChanges {
     constructor(private elementRef:ElementRef) {
     }
 
+    ngOnInit() {
+        this.options.useLegacy = 'auto';
+        this.options.onVisible = () => this.visibleEvent.emit(this);
+        this.options.onShow = () => this.showEvent.emit(this);
+        this.options.onChange = () => this.changeEvent.emit(this);
+        this.options.onHide = () => this.hideEvent.emit(this);
+        this.options.onHidden = () => this.hiddenEvent.emit(this);
+    }
+
     ngOnChanges(changes) {
         setTimeout(() => {
             let classUtil = new ClassUtil([ "ui", "sidebar" ]);
@@ -68,6 +79,15 @@ export class SidebarComponent implements OnChanges {
             }
             classUtil.addClasses(this.menuClasses);
             this.classes = classUtil.getStringClasses();
+
+            this.options.exclusive = this.exclusive;
+            this.options.closable = this.closable;
+            this.options.dimPage = this.dimmable;
+            this.options.scrollLock = this.scrollLock;
+            this.options.transition = this.transition;
+
+            jQuery(this.elementRef.nativeElement).sidebar(this.options);
+
             this.initialized = true;
         });
     }
@@ -76,18 +96,6 @@ export class SidebarComponent implements OnChanges {
         if (this.closable) {
             this.elementRef.nativeElement.addEventListener('click', (e) => this.toggle());
         }
-        jQuery(this.elementRef.nativeElement).sidebar({
-            exclusive: this.exclusive,
-            closable: this.closable,
-            dimPage: this.dimmable,
-            scrollLock: this.scrollLock,
-            useLegacy: 'auto',
-            onVisible: () => this.visibleEvent.emit(this),
-            onShow: () => this.showEvent.emit(this),
-            onChange: () => this.changeEvent.emit(this),
-            onHide: () => this.hideEvent.emit(this),
-            onHidden: () => this.hiddenEvent.emit(this)
-        });
         if (!this.initialized) {
             this.ngOnChanges(null);
         }
