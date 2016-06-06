@@ -44,6 +44,9 @@ export class MenuComponent implements OnChanges {
 
     ngOnInit() {
         let contentElement = document.querySelector(this.content);
+        if (!contentElement) {
+            throw new Error(`Element with selector ${this.content} is required.`);
+        }
         if (this.fixed == true) {
             // Si le menu doit être fixe, alors on ajoute la classe CSS pour le menu fixe si elle n'existe pas déjà
             if (!contentElement.classList.contains(MenuComponent.FIXED_CLASS)) {
