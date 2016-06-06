@@ -54,7 +54,6 @@ export class SidebarComponent implements OnChanges {
     @Output() showEvent:EventEmitter<any> = new EventEmitter();
 
     @Output() visibleEvent:EventEmitter<any> = new EventEmitter();
-    s
 
     constructor(private elementRef:ElementRef) {
     }
@@ -64,12 +63,8 @@ export class SidebarComponent implements OnChanges {
             let classUtil = new ClassUtil([ "ui", "sidebar" ]);
             classUtil.addClass(this.position);
             if (this.menu) {
-                if (!this.menu.initialized) {
-                    this.menu.ngOnChanges(null);
-                }
+                this.menu.ngOnChanges(null);
                 this.menuClasses = this.menu.classes.split(" ");
-                this.elementRef.nativeElement.removeChild(this.menu.elementRef.nativeElement);
-                this.menu = null;
             }
             classUtil.addClasses(this.menuClasses);
             this.classes = classUtil.getStringClasses();
