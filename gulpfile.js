@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var del = require('del');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var filter = require('gulp-filter');
@@ -16,9 +17,18 @@ gulp.task('bundle', ['bundle']);
 
 gulp.task('js', ["build_js:angular2", 'build_js:vendors']);
 
-gulp.task('css', ['build_css:vendors', 'build_css:app', 'build_css:semantic-ng2']);
+gulp.task('css', ['build_css:vendors', 'build_css:demo', 'build_css:semantic-ng2']);
 
 gulp.task('copy', ['copy:fonts', 'copy:images']);
+
+gulp.task('clean', function () {
+    return del.sync([
+        'build/**/*',
+        // 'node_modules/**/*',
+        'typings/**/*',
+        'vendors/**/*'
+    ])
+});
 
 gulp.task('build_js:angular2', function () {
     return gulp.src([
@@ -52,7 +62,8 @@ gulp.task('src:vendors', function () {
 gulp.task('build_js:vendors', ['src:vendors'], function () {
     return gulp.src([
         './build/js/vendors.js',
-        './vendors/faker/build/build/faker.js'
+        './vendors/faker/build/build/faker.js',
+        './node_modules/prismjs/prism.js'
     ])
         .pipe(concat('demo.js'))
         .pipe(replace('module.error(error.pusher);', ''))
@@ -73,11 +84,13 @@ gulp.task('build_css:vendors', function () {
         .pipe(gulp.dest('./build/css/'));
 });
 
-gulp.task('build_css:app', function () {
+gulp.task('build_css:demo', function () {
     return gulp.src([
-        './app/app.scss'
+        './app/app.scss',
+        './node_modules/prismjs/themes/prism-okaidia.css'
     ])
         .pipe(sass())
+        .pipe(concat('demo.css'))
         .pipe(strip_css())
         .pipe(autoprefixer())
         .pipe(minify_css({processImport: false}))

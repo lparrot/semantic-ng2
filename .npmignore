@@ -19,7 +19,7 @@
 /controllers
 /models
 /routes
-/build/css/app.css
+/build/css/demo*
 /build/js/demo*
 bower.json
 gulpfile.js
