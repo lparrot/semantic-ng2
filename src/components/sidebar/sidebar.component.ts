@@ -33,6 +33,8 @@ export class SidebarComponent implements OnChanges {
 
     @HostBinding('class') classes:string;
 
+    @Input() context:string = 'body';
+
     @Input() closable:boolean = true;
 
     @Input() dimmable:boolean = true;
@@ -47,7 +49,7 @@ export class SidebarComponent implements OnChanges {
 
     @Input() transition:string = "overlay";
 
-    @Input() context:string = 'body';
+    @Input() visible:boolean;
 
     @Output() changeEvent:EventEmitter<any> = new EventEmitter();
 
@@ -79,8 +81,10 @@ export class SidebarComponent implements OnChanges {
             if (this.menu) {
                 this.menu.ngOnChanges(null);
                 this.menuClasses = this.menu.classes.split(" ");
+                this.menu.setDisabled();
             }
             classUtil.addClasses(this.menuClasses);
+            classUtil.addClassIfTrue(this.visible, "visible");
             this.classes = classUtil.getStringClasses();
 
             this.options.exclusive = this.exclusive;

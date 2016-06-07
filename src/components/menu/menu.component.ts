@@ -80,4 +80,8 @@ export class MenuComponent implements OnChanges {
         this.initialized = true;
         this.initializationEvent.emit(null);
     }
+
+    setDisabled() {
+        this.elementRef.nativeElement.style.display = "none";
+    }
 }

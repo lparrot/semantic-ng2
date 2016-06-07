@@ -50,12 +50,16 @@
 
 <h4 class="ui header">Using a custom context</h4>
 
+<div class="ui info message">
+    <p>[visible]="true" option make this sidebar visible on page load.</p>
+</div>
+
 <div class="ui top attached segment">
-    <button smt-button [color]="'primary'" (click)="sidebarCustomContext.show()">Show custom context sidebar</button>
+    <button smt-button [color]="'primary'" (click)="sidebarCustomContext.toggle()">Toggle custom context sidebar</button>
 </div>
 <div class="ui bottom attached segment pushable">
-    <smt-sidebar #sidebarCustomContext [context]="'.bottom.segment'">
-        <smt-menu [inverted]="true" [icon]="true" [vertical]="true" [labeled]="true"></smt-menu>
+    <smt-sidebar #sidebarCustomContext [visible]="true" [context]="'.bottom.segment'">
+        <smt-menu [inverted]="true" [vertical]="true" [labeled]="true"></smt-menu>
         <a smt-menu-item>
             <i class="home icon"></i>
             <span>Home</span>
