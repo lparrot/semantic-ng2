@@ -7,7 +7,7 @@
     "tsc": "tsc",
     "start": "node server.js",
     "heroku-postbuild": "npm run app:install",
-    "app:install": "npm install && typings install && bower install && gulp",
+    "app:install": "npm install && typings install && bower install && tsc && gulp",
     "npm:outdated": "npm outdated",
     "registry:npmjs": "npm set registry https://registry.npmjs.org",
     "registry:sinopia": "npm set registry http://localhost:4873",
