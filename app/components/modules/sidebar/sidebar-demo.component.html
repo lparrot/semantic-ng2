@@ -47,3 +47,42 @@
         <span>Videos</span>
     </a>
 </smt-sidebar>
+
+<h4 class="ui header">Using a custom context</h4>
+
+<div class="ui top attached segment">
+    <button smt-button [color]="'primary'" (click)="sidebarCustomContext.show()">Show custom context sidebar</button>
+</div>
+<div class="ui bottom attached segment pushable">
+    <smt-sidebar #sidebarCustomContext [context]="'.bottom.segment'">
+        <smt-menu [inverted]="true" [icon]="true" [vertical]="true" [labeled]="true"></smt-menu>
+        <a smt-menu-item>
+            <i class="home icon"></i>
+            <span>Home</span>
+        </a>
+        <a smt-menu-item>
+            <i class="block layout icon"></i>
+            <span>Topics</span>
+        </a>
+        <a smt-menu-item>
+            <i class="smile icon"></i>
+            <span>Friends</span>
+        </a>
+        <a smt-menu-item>
+            <i class="calendar icon"></i>
+            <span>History</span>
+        </a>
+    </smt-sidebar>
+    <div class="pusher">
+        <div class="ui basic segment">
+            <h3 class="ui header">Application Content</h3>
+            <img class="ui wireframe image" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+            <div class="ui hidden divider"></div>
+            <img class="ui wireframe image" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+            <div class="ui hidden divider"></div>
+            <img class="ui wireframe image" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+            <div class="ui hidden divider"></div>
+            <img class="ui wireframe image" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+        </div>
+    </div>
+</div>

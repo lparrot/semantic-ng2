@@ -39,13 +39,15 @@ export class SidebarComponent implements OnChanges {
 
     @Input() exclusive:boolean;
 
-    @Input() position:string;
+    @Input() position:string = 'left';
 
     @Input() scrollLock:boolean;
 
     @Input() showOnLoad:boolean;
 
     @Input() transition:string = "overlay";
+
+    @Input() context:string = 'body';
 
     @Output() changeEvent:EventEmitter<any> = new EventEmitter();
 
@@ -67,6 +69,7 @@ export class SidebarComponent implements OnChanges {
         this.options.onChange = () => this.changeEvent.emit(this);
         this.options.onHide = () => this.hideEvent.emit(this);
         this.options.onHidden = () => this.hiddenEvent.emit(this);
+        this.options.context = jQuery(this.context);
     }
 
     ngOnChanges(changes) {
@@ -172,13 +175,21 @@ export class SidebarComponent implements OnChanges {
      * Shows sidebar
      */
     show() {
-        jQuery(this.elementRef.nativeElement).fixSidebar().sidebar('show');
+        if (this.context) {
+            jQuery(this.elementRef.nativeElement).sidebar('show');
+        } else {
+            jQuery(this.elementRef.nativeElement).fixSidebar().sidebar('show');
+        }
     }
 
     /**
      * Toggles visibility of sidebar
      */
     toggle() {
-        jQuery(this.elementRef.nativeElement).fixSidebar().sidebar("toggle");
+        if (this.context) {
+            jQuery(this.elementRef.nativeElement).sidebar("toggle");
+        } else {
+            jQuery(this.elementRef.nativeElement).fixSidebar().sidebar("toggle");
+        }
     }
 }
