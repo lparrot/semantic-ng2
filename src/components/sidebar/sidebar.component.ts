@@ -43,6 +43,8 @@ export class SidebarComponent implements OnChanges {
 
     @Input() position:string = 'left';
 
+    @Input() returnScroll:boolean;
+
     @Input() scrollLock:boolean;
 
     @Input() showOnLoad:boolean;
@@ -66,12 +68,12 @@ export class SidebarComponent implements OnChanges {
 
     ngOnInit() {
         this.options.useLegacy = 'auto';
+        this.options.context = jQuery(this.context);
         this.options.onVisible = () => this.visibleEvent.emit(this);
         this.options.onShow = () => this.showEvent.emit(this);
         this.options.onChange = () => this.changeEvent.emit(this);
         this.options.onHide = () => this.hideEvent.emit(this);
         this.options.onHidden = () => this.hiddenEvent.emit(this);
-        this.options.context = jQuery(this.context);
     }
 
     ngOnChanges(changes) {
@@ -91,6 +93,7 @@ export class SidebarComponent implements OnChanges {
             this.options.closable = this.closable;
             this.options.dimPage = this.dimmable;
             this.options.scrollLock = this.scrollLock;
+            this.options.returnScroll = this.returnScroll;
             this.options.transition = this.transition;
 
             jQuery(this.elementRef.nativeElement).sidebar(this.options);
