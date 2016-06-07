@@ -33,16 +33,28 @@ gulp.task('build_js:angular2', function () {
         .pipe(gulp.dest('./build/js'));
 });
 
-gulp.task('build_js:vendors', function () {
+gulp.task('src:vendors', function () {
     return gulp.src([
         './vendors/jquery/dist/jquery.js',
         './vendors/lodash/dist/lodash.js',
         './vendors/JavaScript-MD5/js/md5.js',
         './vendors/semantic/dist/semantic.js',
-        './vendors/faker/build/build/faker.js',
         './vendors/toastr/toastr.js'
     ])
         .pipe(concat('vendors.js'))
+        .pipe(replace('module.error(error.pusher);', ''))
+        .pipe(replace('module.error(error.movedSidebar, element);', ''))
+        .pipe(strip_js())
+        .pipe(minify_js())
+        .pipe(gulp.dest('./build/js/'));
+});
+
+gulp.task('build_js:vendors', ['src:vendors'], function () {
+    return gulp.src([
+        './build/js/vendors.js',
+        './vendors/faker/build/build/faker.js'
+    ])
+        .pipe(concat('demo.js'))
         .pipe(replace('module.error(error.pusher);', ''))
         .pipe(replace('module.error(error.movedSidebar, element);', ''))
         .pipe(strip_js())

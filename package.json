@@ -51,6 +51,7 @@
     "lodash": "^4.13.1",
     "mongoose": "^4.4.19",
     "morgan": "^1.7.0",
+    "prismjs": "^1.5.1",
     "typescript": "1.8.10",
     "typings": "0.8.1"
   },
