@@ -4,6 +4,7 @@ export * from "./card/index";
 export * from "./checkbox/index";
 export * from "./datatable/index";
 export * from "./divider/index";
+export * from "./flag/index";
 export * from "./form/index";
 export * from "./gravatar/index";
 export * from "./icon/index";

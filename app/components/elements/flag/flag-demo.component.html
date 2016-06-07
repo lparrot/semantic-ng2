@@ -1,0 +1,13 @@
+<demo-header [title]="'Flag'" [site]="'elements/flag.html'" [wiki]="'Flag'"></demo-header>
+
+<div class="ui info message">
+    <p>Type the name of the flag into the input field below</p>
+</div>
+
+<div class="ui input">
+    <input [(ngModel)]="flag" type="text" placeholder="Flag...">
+</div>
+
+<div class="ui hidden divider"></div>
+
+<i smt-flag="{{flag}}"></i>

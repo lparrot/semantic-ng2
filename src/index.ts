@@ -6,6 +6,7 @@ import { CardComponent, CardContentComponent, CardExtraComponent, CardGroupCompo
 import { CheckboxComponent, CheckboxListComponent } from "./components/checkbox/index";
 import { DatatableComponent } from "./components/datatable/index";
 import { DividerComponent } from "./components/divider/index";
+import { FlagComponent } from "./components/flag/index";
 import { FormComponent } from "./components/form/index";
 import { GravatarDirective } from "./components/gravatar/index";
 import { IconComponent } from "./components/icon/index";
@@ -28,6 +29,7 @@ export const SMT_DIRECTIVES:any[] = [
     CheckboxComponent, CheckboxListComponent,
     DatatableComponent,
     DividerComponent,
+    FlagComponent,
     FormComponent,
     GravatarDirective,
     IconComponent,

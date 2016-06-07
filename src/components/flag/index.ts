@@ -1,17 +1,17 @@
-import { Component, Input, HostBinding } from "@angular/core";
+import { Component, HostBinding, Input } from "@angular/core";
 import { ClassUtil } from "../../core/util/class.util";
 
 @Component({
-    selector: '[smt-icon]',
+    selector: '[smt-flag]',
     template: ``
 })
-export class IconComponent {
+export class FlagComponent {
 
     initialized:boolean;
 
     @HostBinding('class') classes:string;
 
-    @Input("smt-icon") value:string;
+    @Input("smt-flag") value:string;
 
     constructor() {
     }
@@ -23,10 +23,11 @@ export class IconComponent {
     }
 
     ngOnChanges(changes) {
-        let classUtil = new ClassUtil([ "icon" ]);
+        let classUtil = new ClassUtil([ "flag" ]);
         classUtil.addClass(this.value);
         this.classes = classUtil.getStringClasses();
         this.initialized = true;
     }
 
 }
+
