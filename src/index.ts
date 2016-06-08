@@ -9,7 +9,7 @@ import { DividerComponent } from "./components/divider/index";
 import { FlagComponent } from "./components/flag/index";
 import { FormComponent } from "./components/form/index";
 import { GravatarDirective } from "./components/gravatar/index";
-import { IconComponent } from "./components/icon/index";
+import { IconComponent, IconGroupComponent } from "./components/icon/index";
 import { LabelComponent } from "./components/label/index";
 import { MenuComponent, MenuBlockItemComponent, MenuItemDirective } from "./components/menu/index";
 import { ModalComponent } from "./components/modal/index";
@@ -32,7 +32,7 @@ export const SMT_DIRECTIVES:any[] = [
     FlagComponent,
     FormComponent,
     GravatarDirective,
-    IconComponent,
+    IconComponent, IconGroupComponent,
     LabelComponent,
     MenuComponent, MenuBlockItemComponent, MenuItemDirective,
     ModalComponent,

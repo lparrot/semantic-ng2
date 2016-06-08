@@ -1,0 +1,96 @@
+<demo-header [title]="'Icon'" [site]="'elements/icon.html'" [wiki]="'Icon'"></demo-header>
+
+<h2 class="ui header">States</h2>
+
+<h4 class="ui header">Disabled</h4>
+
+<i smt-icon="users" [disabled]="true"></i>
+
+<h4 class="ui header">Loading</h4>
+
+<i smt-icon="spinner" [loading]="true"></i>
+<i smt-icon="notched circle" [loading]="true"></i>
+<i smt-icon="asterisk" [loading]="true"></i>
+
+<h2 class="ui header">Variations</h2>
+
+<h4 class="ui header">Fitted</h4>
+
+<span>Tight spacing</span>
+<i smt-icon="help" [fitted]="true"></i>
+<span>Tight spacing</span>
+
+<h4>Size</h4>
+
+<i smt-icon="home" [size]="'mini'"></i>
+<i smt-icon="home" [size]="'tiny'"></i>
+<i smt-icon="home" [size]="'small'"></i>
+<i smt-icon="home"></i>
+<i smt-icon="home" [size]="'large'"></i>
+<i smt-icon="home" [size]="'big'"></i>
+<i smt-icon="home" [size]="'huge'"></i>
+<i smt-icon="home" [size]="'massive'"></i>
+
+<h4 class="ui header">Link</h4>
+
+<i smt-icon="close" [link]="true"></i>
+<i smt-icon="help" [link]="true"></i>
+
+<h4 class="ui header">Rotate</h4>
+
+<i smt-icon="cloud"></i>
+<i smt-icon="cloud" [rotate]="'flip'"></i>
+<i smt-icon="cloud" [rotate]="'left'"></i>
+<i smt-icon="cloud" [rotate]="'right'"></i>
+
+<h4 class="ui header">Circular</h4>
+
+<i smt-icon="users" [circular]="true"></i>
+<i smt-icon="users" [circular]="true" [color]="'teal'"></i>
+<i smt-icon="users" [circular]="true" [inverted]="true"></i>
+<i smt-icon="users" [circular]="true" [inverted]="true" [color]="'teal'"></i>
+
+<h4 class="ui header">Bordered</h4>
+
+<i smt-icon="users" [bordered]="true"></i>
+<i smt-icon="users" [bordered]="true" [color]="'teal'"></i>
+<i smt-icon="users" [bordered]="true" [inverted]="true"></i>
+<i smt-icon="users" [bordered]="true" [inverted]="true" [color]="'teal'"></i>
+
+<h4 class="ui header">Colored</h4>
+
+<i *ngFor="let color of lists.color" smt-icon="users" [color]="color"></i>
+
+<h2 class="ui header">Groups</h2>
+
+<h4 class="ui header">Icons</h4>
+
+<smt-icon-group [size]="'huge'">
+    <i smt-icon="thin circle" [size]="'big'"></i>
+    <i smt-icon="user"></i>
+</smt-icon-group>
+
+<smt-icon-group [size]="'huge'">
+    <i smt-icon="dont" [color]="'red'" [size]="'big'"></i>
+    <i smt-icon="user" [color]="'black'"></i>
+</smt-icon-group>
+
+<smt-icon-group [size]="'huge'">
+    <i smt-icon="sun" [loading]="true" [size]="'big'"></i>
+    <i smt-icon="user"></i>
+</smt-icon-group>
+
+<h4 class="ui header">Corner icon</h4>
+
+<smt-icon-group [size]="'huge'">
+    <i smt-icon="puzzle"></i>
+    <i smt-icon="add" [corner]="true"></i>
+</smt-icon-group>
+
+<h2 class="ui header">
+    <smt-icon-group [size]="'large'">
+        <i smt-icon="twitter"></i>
+        <i smt-icon="add" [corner]="true" [inverted]="true"></i>
+    </smt-icon-group>
+    <span>Add on twitter</span>
+</h2>
