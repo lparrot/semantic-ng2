@@ -24,7 +24,7 @@ gulp.task('copy', ['copy:fonts', 'copy:images']);
 gulp.task('clean', function () {
     return del.sync([
         'build/**/*',
-        // 'node_modules/**/*',
+        'node_modules/**/*',
         'typings/**/*',
         'vendors/**/*'
     ])
