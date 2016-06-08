@@ -1,6 +1,6 @@
 {
   "name": "semantic-ng2",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Semantic-UI package for Angular2",
   "main": "semantic-ng2.js",
   "scripts": {
