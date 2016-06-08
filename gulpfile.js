@@ -15,7 +15,7 @@ gulp.task('default', ['js', 'css', 'copy']);
 
 gulp.task('bundle', ['bundle']);
 
-gulp.task('js', ["build_js:angular2", 'build_js:vendors']);
+gulp.task('js', ["build_js:angular2", 'build_js:demo']);
 
 gulp.task('css', ['build_css:vendors', 'build_css:demo', 'build_css:semantic-ng2']);
 
@@ -59,11 +59,10 @@ gulp.task('src:vendors', function () {
         .pipe(gulp.dest('./build/js/'));
 });
 
-gulp.task('build_js:vendors', ['src:vendors'], function () {
+gulp.task('build_js:demo', ['src:vendors'], function () {
     return gulp.src([
         './build/js/vendors.js',
-        './vendors/faker/build/build/faker.js',
-        './node_modules/prismjs/prism.js'
+        './vendors/faker/build/build/faker.js'
     ])
         .pipe(concat('demo.js'))
         .pipe(replace('module.error(error.pusher);', ''))
@@ -86,8 +85,7 @@ gulp.task('build_css:vendors', function () {
 
 gulp.task('build_css:demo', function () {
     return gulp.src([
-        './app/app.scss',
-        './node_modules/prismjs/themes/prism-okaidia.css'
+        './app/app.scss'
     ])
         .pipe(sass())
         .pipe(concat('demo.css'))
