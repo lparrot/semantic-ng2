@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { RouteConfig, ROUTER_DIRECTIVES } from "@angular/router-deprecated";
 import { SMT_DIRECTIVES, HttpService, SettingsService } from "../../../src/index";
 import { HomeDemoComponent } from "../home/index";
-import { ButtonDemoComponent, FlagDemoComponent, IconDemoComponent } from "../elements/index";
+import { ButtonDemoComponent, ContainerDemoComponent, FlagDemoComponent, IconDemoComponent } from "../elements/index";
 import { MenuDemoComponent } from "../collections/index";
 import { AccordionDemoComponent, CheckboxDemoComponent, ModalDemoComponent, ProgressDemoComponent, SidebarDemoComponent } from "../modules/index";
 import { DatatableDemoComponent } from "../customs/index";
@@ -15,6 +15,7 @@ declare var $:any, toastr:any;
 @RouteConfig([
     { path: '/', name: 'HomeDemo', component: HomeDemoComponent, useAsDefault: true },
     { path: '/elements/button', name: 'ButtonDemo', component: ButtonDemoComponent },
+    { path: '/elements/container', name: 'ContainerDemo', component: ContainerDemoComponent },
     { path: '/elements/flag', name: 'FlagDemo', component: FlagDemoComponent },
     { path: '/elements/icon', name: 'IconDemo', component: IconDemoComponent },
     { path: '/collections/menu', name: 'MenuDemo', component: MenuDemoComponent },
@@ -39,6 +40,9 @@ export class AppComponent {
         menuItems: [ {
             label: 'Button',
             route: [ 'ButtonDemo' ]
+        }, {
+            label: 'Container',
+            route: [ 'ContainerDemo' ]
         }, {
             label: 'Flag',
             route: [ 'FlagDemo' ]

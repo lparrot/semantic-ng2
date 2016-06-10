@@ -4,6 +4,7 @@ import { AccordionComponent, AccordionItemComponent } from "./components/accordi
 import { ButtonComponent, ButtonGroupComponent } from "./components/button/index";
 import { CardComponent, CardContentComponent, CardExtraComponent, CardGroupComponent, CardImageComponent, CardMetaComponent } from "./components/card/index";
 import { CheckboxComponent, CheckboxListComponent } from "./components/checkbox/index";
+import { ContainerComponent } from "./components/container/index";
 import { DatatableComponent } from "./components/datatable/index";
 import { DividerComponent } from "./components/divider/index";
 import { FlagComponent } from "./components/flag/index";
@@ -27,6 +28,7 @@ export const SMT_DIRECTIVES:any[] = [
     ButtonComponent, ButtonGroupComponent,
     CardComponent, CardContentComponent, CardExtraComponent, CardGroupComponent, CardImageComponent, CardMetaComponent,
     CheckboxComponent, CheckboxListComponent,
+    ContainerComponent,
     DatatableComponent,
     DividerComponent,
     FlagComponent,

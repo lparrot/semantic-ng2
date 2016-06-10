@@ -2,6 +2,7 @@ export * from "./accordion/index";
 export * from "./button/index";
 export * from "./card/index";
 export * from "./checkbox/index";
+export * from "./container/index";
 export * from "./datatable/index";
 export * from "./divider/index";
 export * from "./flag/index";
