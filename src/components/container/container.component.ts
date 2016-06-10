@@ -29,7 +29,7 @@ export class ContainerComponent {
         })
     }
 
-    ngOnChanges() {
+    ngOnChanges(changes) {
         let classUtil = new ClassUtil([ "ui", "container" ]);
         classUtil.addClassIfTrue(this.text, "text");
         if (!CoreUtil.isNaN(this.aligned)) {
