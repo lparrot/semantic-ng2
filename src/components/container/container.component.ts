@@ -1,12 +1,13 @@
 import { Component, HostBinding, Input } from "@angular/core";
 import { ClassUtil } from "../../core/util/class.util";
-import { CoreUtil } from "../../core/util/core.util";
 
 @Component({
     selector: 'smt-container',
     template: `<ng-content></ng-content>`
 })
 export class ContainerComponent {
+
+    static alignedList:string[] = [ "left", "right", "center", "justified" ];
 
     initialized:boolean;
 
@@ -32,7 +33,7 @@ export class ContainerComponent {
     ngOnChanges(changes) {
         let classUtil = new ClassUtil([ "ui", "container" ]);
         classUtil.addClassIfTrue(this.text, "text");
-        if (!CoreUtil.isNaN(this.aligned)) {
+        if (ClassUtil.controlValues(ContainerComponent.alignedList, "aligned", this.aligned)) {
             if (this.aligned == "justified") {
                 classUtil.addClass("justified");
             } else {

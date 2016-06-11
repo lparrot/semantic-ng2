@@ -20,6 +20,31 @@ export class ClassUtil {
         this.classes = ClassUtil.clean(classesToAdd);
     }
 
+    public static controlValues(list:any[], attributeName:string, value:any, nullable?:boolean = false):boolean {
+        if (value != undefined) {
+            if (!nullable) {
+                if (CoreUtil.stringIsEmpty(value)) {
+                    console.error(`${attributeName}: Value is required.`);
+                    return false;
+                }
+            } else {
+                if (CoreUtil.stringIsEmpty(value) || value == true) {
+                    return true;
+                }
+                if (value == false) {
+                    return false;
+                }
+            }
+            if (list.indexOf(value) == -1) {
+                console.error(`${attributeName}: Values ${value} is incorrect.`);
+            } else {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
     /**
      * Ajoute une classe
      * @param classToAdd {string}

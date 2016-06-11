@@ -1,6 +1,7 @@
 import { Component, Input, HostBinding, ChangeDetectionStrategy } from "@angular/core";
 import { CoreUtil } from "../../core/util/core.util";
 import { ClassUtil } from "../../core/util/class.util";
+import { ConstUtil } from "../../core/util/const.util";
 
 @Component({
     selector: 'smt-button-group',
@@ -51,8 +52,12 @@ export class ButtonGroupComponent {
         classUtil.addClassIfTrue(this.vertical, "vertical");
         classUtil.addClassIfTrue(this.labeled, "labeled");
         classUtil.addClassIfTrue(this.basic, "basic");
-        classUtil.addClass(this.color);
-        classUtil.addClass(this.size);
+        if (ClassUtil.controlValues([ ...ConstUtil.COLOR_LIST, ...ConstUtil.EMPHASIS_LIST ], "color", this.color)) {
+            classUtil.addClass(this.color);
+        }
+        if (ClassUtil.controlValues(ConstUtil.SIZE_LIST, "size", this.size)) {
+            classUtil.addClass(this.size);
+        }
         classUtil.addNumericClass(this.number);
         this.classes = classUtil.getStringClasses();
         this.type = this.getType();

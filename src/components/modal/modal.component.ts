@@ -9,6 +9,8 @@ declare var jQuery:any;
 })
 export class ModalComponent {
 
+    static sizeList:string[] = [ "large", "small" ];
+
     component:any;
 
     initialized:boolean;
@@ -91,7 +93,9 @@ export class ModalComponent {
         let classUtil = new ClassUtil([ "ui", "modal" ]);
         classUtil.addClassIfTrue(this.basic, "basic");
         classUtil.addClassIfTrue(this.fullscreen, "fullscreen");
-        classUtil.addClass(this.size);
+        if (ClassUtil.controlValues(ModalComponent.sizeList, "size", this.size)) {
+            classUtil.addClass(this.size);
+        }
         this.options.autofocus = this.autofocus;
         this.options.allowMultiple = this.allowMultiple;
         this.options.closable = this.closable;

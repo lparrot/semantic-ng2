@@ -23,6 +23,8 @@ jQuery.fn.fixSidebar = function () {
 })
 export class SidebarComponent implements OnChanges {
 
+    static positionList:string[] = [ "top", "bottom", "left", "right" ];
+
     initialized:boolean;
 
     menuClasses:string[];
@@ -79,14 +81,20 @@ export class SidebarComponent implements OnChanges {
     ngOnChanges(changes) {
         setTimeout(() => {
             let classUtil = new ClassUtil([ "ui", "sidebar" ]);
-            classUtil.addClass(this.position);
+
+            if (ClassUtil.controlValues(SidebarComponent.positionList, "position", this.position)) {
+                classUtil.addClass(this.position);
+            }
+
             if (this.menu) {
                 this.menu.ngOnChanges(null);
                 this.menuClasses = this.menu.classes.split(" ");
                 this.menu.setDisabled();
             }
+
             classUtil.addClasses(this.menuClasses);
             classUtil.addClassIfTrue(this.visible, "visible");
+
             this.classes = classUtil.getStringClasses();
 
             this.options.exclusive = this.exclusive;

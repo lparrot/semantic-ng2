@@ -1,7 +1,8 @@
 import { Component, Input, ElementRef, HostBinding } from "@angular/core";
 import { ClassUtil } from "../../core/util/class.util";
+import { ConstUtil } from "../../core/util/const.util";
 
-declare var $:any;
+var $:any;
 
 @Component({
     selector: 'smt-card',
@@ -34,7 +35,9 @@ export class CardComponent {
     ngOnChanges(changes) {
         let classUtil = new ClassUtil([ "ui", "card" ]);
         classUtil.addClassIfTrue(this.centered, "centered");
-        classUtil.addClass(this.color);
+        if (ClassUtil.controlValues(ConstUtil.COLOR_LIST, "color", this.color)) {
+            classUtil.addClass(this.color);
+        }
         classUtil.addClassIfTrue(this.link, "link");
         this.classes = classUtil.getStringClasses();
     }

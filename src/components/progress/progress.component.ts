@@ -1,6 +1,6 @@
 import { Component, HostBinding, ElementRef, EventEmitter, Output, Input } from "@angular/core";
 import { ClassUtil } from "../../core/util/class.util";
-import { CoreUtil } from "../../core/util/core.util";
+import { ConstUtil } from "../../core/util/const.util";
 
 declare var jQuery:any;
 
@@ -13,6 +13,10 @@ declare var jQuery:any;
         <div *ngIf="label" class="label">{{label}}</div>`
 })
 export class ProgressComponent {
+
+    static attachedList:string[] = [ "top", "bottom" ];
+
+    static stateList:string[] = [ "disabled", "success", "warning", "error" ];
 
     initialized:boolean;
 
@@ -81,16 +85,24 @@ export class ProgressComponent {
         let classUtil = new ClassUtil([ "ui", "progress" ]);
         classUtil.addClassIfTrue(this.indicating, "indicating");
         classUtil.addClassIfTrue(this.inverted, "inverted");
-        classUtil.addClass(this.state);
-        classUtil.addClass(this.size);
-        classUtil.addClass(this.color);
 
-        if (!CoreUtil.isNaN(this.attached)) {
-            classUtil.addClasses([ this.attached, "attached" ]);
-            this.withProgress = false;
+        if (ClassUtil.controlValues(ProgressComponent.stateList, "state", this.state)) {
+            classUtil.addClass(this.state);
         }
 
-        if (this.size == "tiny" || this.size == "small") {
+        if (ClassUtil.controlValues(ConstUtil.SIZE_LIST, "size", this.size)) {
+            classUtil.addClass(this.size);
+            if (this.size == "tiny" || this.size == "small") {
+                this.withProgress = false;
+            }
+        }
+
+        if (ClassUtil.controlValues(ConstUtil.COLOR_LIST, "color", this.color)) {
+            classUtil.addClass(this.color);
+        }
+
+        if (ClassUtil.controlValues(ProgressComponent.attachedList, "attached", this.attached)) {
+            classUtil.addClasses([ this.attached, "attached" ]);
             this.withProgress = false;
         }
 

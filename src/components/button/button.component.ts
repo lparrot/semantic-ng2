@@ -5,6 +5,7 @@ import { HttpService } from "../../services/http.service";
 import { IconComponent } from "../icon/icon.component";
 import { ClassUtil } from "../../core/util/class.util";
 import { ButtonApi } from "./model/button-api.model";
+import { ConstUtil } from "../../core/util/const.util";
 
 @Component({
     selector: '[smt-button]',
@@ -23,8 +24,12 @@ import { ButtonApi } from "./model/button-api.model";
     directives: [ IconComponent ]
 })
 export class ButtonComponent implements OnChanges {
-    static socialList:string[] = [ "facebook", "twitter", "google plus", "vk", "linkedin", "instagram", "youtube" ];
 
+    static attachedList:any[] = [ true, "top", "bottom", "left", "right" ];
+
+    static floatedList:string[] = [ "left", "right" ];
+
+    static socialList:string[] = [ "facebook", "twitter", "google plus", "vk", "linkedin", "instagram", "youtube" ];
 
     initialized:boolean;
 
@@ -96,14 +101,18 @@ export class ButtonComponent implements OnChanges {
         classUtil.addClassIfTrue(this.fluid, "fluid");
         classUtil.addClassIfTrue(this.compact, "compact");
 
-        classUtil.addClass(this.color);
-        classUtil.addClass(this.size);
+        if (ClassUtil.controlValues([ ...ConstUtil.COLOR_LIST, ...ConstUtil.EMPHASIS_LIST ], "color", this.color)) {
+            classUtil.addClass(this.color);
+        }
+        if (ClassUtil.controlValues(ConstUtil.SIZE_LIST, "size", this.size)) {
+            classUtil.addClass(this.size);
+        }
 
-        if (this.floated) {
+        if (ClassUtil.controlValues(ButtonComponent.floatedList, "floated", this.floated)) {
             classUtil.addClasses([ this.floated, "floated" ]);
         }
 
-        if (this.attached) {
+        if (ClassUtil.controlValues(ButtonComponent.attachedList, "attached", this.attached)) {
             if (this.attached == true) {
                 classUtil.addClass("attached");
             } else {
@@ -116,15 +125,19 @@ export class ButtonComponent implements OnChanges {
             classUtil.addClass("animated");
             classUtil.addClassIfTrue(this.animated.fade, "fade");
         }
+
         if (this.labeled) {
             classUtil.addClassIfTrue(this.labeled.right, "right");
             classUtil.addClass("labeled");
         }
-        if (!CoreUtil.isNaN(this.social)) {
+
+        if (ClassUtil.controlValues(ButtonComponent.socialList, "social", this.social)) {
             classUtil.addClass(this.social);
             this.icon = this.social;
         }
+
         classUtil.addClassIfTrue((!CoreUtil.isNaN(this.icon) && (this.iconOnly == true || !CoreUtil.isNaN(this.labeled))) || this.circular == true, "icon");
+
         this.classes = classUtil.getStringClasses();
         this.type = this.getType();
         this.initialized = true;

@@ -1,12 +1,14 @@
 import { Component, Input, OnChanges, EventEmitter, HostBinding, ElementRef } from "@angular/core";
-import { CoreUtil } from "../../core/util/core.util";
 import { ClassUtil } from "../../core/util/class.util";
+import { ConstUtil } from "../../core/util/const.util";
 
 @Component({
     selector: 'smt-menu',
     template: `<ng-content></ng-content>`
 })
 export class MenuComponent implements OnChanges {
+
+    static fittedValue:any[] = [ true, "horizontal", "vertical" ];
 
     initialized:boolean;
 
@@ -24,7 +26,7 @@ export class MenuComponent implements OnChanges {
 
     @Input() delimited:boolean = true;
 
-    @Input() fitted:any;
+    @Input() fitted:string;
 
     @Input() fixed:boolean;
 
@@ -66,13 +68,16 @@ export class MenuComponent implements OnChanges {
         classUtil.addClassIfTrue(this.icon, "icon");
         classUtil.addClassIfTrue(this.labeled, "labeled");
         classUtil.addClassIfFalse(this.delimited, "borderless");
-        classUtil.addClass(this.color);
+
+        if (ClassUtil.controlValues(ConstUtil.COLOR_LIST, "color", this.color)) {
+            classUtil.addClass(this.color);
+        }
 
         classUtil.addClassIfTrue(this.fixed, "fixed");
 
-        if (!CoreUtil.isNaN(this.fitted)) {
-            classUtil.addClassIfTrue(this.fitted.direction == 'horizontal', "horizontally");
-            classUtil.addClassIfTrue(this.fitted.direction == 'vertical', "vertically");
+        if (ClassUtil.controlValues(MenuComponent.fittedValue, "fitted", this.fitted)) {
+            classUtil.addClassIfTrue(this.fitted == 'horizontal', "horizontally");
+            classUtil.addClassIfTrue(this.fitted == 'vertical', "vertically");
             classUtil.addClass("fitted");
         }
 

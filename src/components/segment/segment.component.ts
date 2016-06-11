@@ -1,12 +1,13 @@
 import { Component, Input, HostBinding } from "@angular/core";
 import { ClassUtil } from "../../core/util/class.util";
-import { CoreUtil } from "../../core/util/core.util";
 
 @Component({
     selector: '[smt-segment]',
     template: `<ng-content></ng-content>`
 })
 export class SegmentComponent {
+
+    static attachedList:any[] = [ true, "top", "bottom" ];
 
     initialized:boolean;
 
@@ -31,7 +32,7 @@ export class SegmentComponent {
         let classUtil = new ClassUtil([ "ui", "segment" ]);
         classUtil.addClassIfTrue(this.inverted, "inverted");
         classUtil.addClassIfTrue(this.clearing, "clearing");
-        if (!CoreUtil.isNaN(this.attached)) {
+        if (ClassUtil.controlValues(SegmentComponent.attachedList, "attached", this.attached)) {
             if (this.attached == true) {
                 classUtil.addClass("attached");
             } else {

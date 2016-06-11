@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { ClassUtil } from "../../core/util/class.util";
+import { ConstUtil } from "../../core/util/const.util";
 
 @Component({
     selector: 'smt-icon-group',
@@ -24,7 +25,9 @@ export class IconGroupComponent {
 
     ngOnChanges(changes) {
         let classUtil = new ClassUtil([ "icons" ]);
-        classUtil.addClass(this.size);
+        if (ClassUtil.controlValues(ConstUtil.SIZE_LIST, "size", this.size)) {
+            classUtil.addClass(this.size);
+        }
         this.classes = classUtil.getClasses();
         this.initialized = true;
     }

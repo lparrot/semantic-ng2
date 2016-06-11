@@ -17,6 +17,8 @@ export class CheckboxComponent {
 
     initialized:boolean;
 
+    options:any = {};
+
     parent:CheckboxListComponent;
 
     @HostBinding('class') classes:string;
@@ -62,6 +64,20 @@ export class CheckboxComponent {
     constructor(private elementRef:ElementRef, private injector:Injector) {
     }
 
+    ngOnInit() {
+        this.options.onChange = () => this.changeEvent.emit(this);
+        this.options.onChecked = () => this.checkedEvent.emit(this);
+        this.options.onIndeterminate = () => this.indeterminateEvent.emit(this);
+        this.options.onDeterminate = () => this.determinateEvent.emit(this);
+        this.options.onUnchecked = () => this.uncheckedEvent.emit(this);
+        this.options.beforeChecked = () => this.beforeCheckedEvent.emit(this);
+        this.options.beforeIndeterminate = () => this.beforeIndeterminateEvent.emit(this);
+        this.options.beforeDeterminate = () => this.beforeDeterminateEvent.emit(this);
+        this.options.beforeUnchecked = () => this.beforeUncheckedEvent.emit(this);
+        this.options.onEnable = () => this.enableEvent.emit(this);
+        this.options.onDisable = () => this.disableEvent.emit(this);
+    }
+
     ngAfterViewInit() {
         setTimeout(() => {
             if (!this.radio && !this.model) {
@@ -70,19 +86,7 @@ export class CheckboxComponent {
             if (!this.initialized) {
                 this.ngOnChanges(null);
             }
-            jQuery(this.container.nativeElement).checkbox({
-                onChange: () => this.changeEvent.emit(this),
-                onChecked: () => this.checkedEvent.emit(this),
-                onIndeterminate: () => this.indeterminateEvent.emit(this),
-                onDeterminate: () => this.determinateEvent.emit(this),
-                onUnchecked: () => this.uncheckedEvent.emit(this),
-                beforeChecked: () => this.beforeCheckedEvent.emit(this),
-                beforeIndeterminate: () => this.beforeIndeterminateEvent.emit(this),
-                beforeDeterminate: () => this.beforeDeterminateEvent.emit(this),
-                beforeUnchecked: () => this.beforeUncheckedEvent.emit(this),
-                onEnable: () => this.enableEvent.emit(this),
-                onDisable: () => this.disableEvent.emit(this)
-            })
+            jQuery(this.container.nativeElement).checkbox(this.options);
         });
     }
 
@@ -93,6 +97,7 @@ export class CheckboxComponent {
                 this.radio = true;
             }
         }
+
         let classUtil = new ClassUtil([ "ui", "checkbox" ]);
         classUtil.addClassIfTrue(this.radio, "radio");
         if (!this.radio) {

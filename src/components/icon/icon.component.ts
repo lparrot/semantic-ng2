@@ -1,11 +1,14 @@
 import { Component, Input, HostBinding } from "@angular/core";
 import { ClassUtil } from "../../core/util/class.util";
+import { ConstUtil } from "../../core/util/const.util";
 
 @Component({
     selector: '[smt-icon]',
     template: ``
 })
 export class IconComponent {
+
+    static rotateList:string[] = [ "flip", "left", "right" ];
 
     initialized:boolean;
 
@@ -47,8 +50,12 @@ export class IconComponent {
     ngOnChanges(changes) {
         let classUtil = new ClassUtil([ "icon" ]);
         classUtil.addClass(this.value);
-        classUtil.addClass(this.size);
-        classUtil.addClass(this.color);
+        if (ClassUtil.controlValues(ConstUtil.SIZE_LIST, "size", this.size)) {
+            classUtil.addClass(this.size);
+        }
+        if (ClassUtil.controlValues(ConstUtil.COLOR_LIST, "color", this.color)) {
+            classUtil.addClass(this.color);
+        }
         classUtil.addClassIfTrue(this.bordered, "bordered");
         classUtil.addClassIfTrue(this.circular, "circular");
         classUtil.addClassIfTrue(this.disabled, "disabled");
@@ -58,12 +65,14 @@ export class IconComponent {
         classUtil.addClassIfTrue(this.link, "link");
         classUtil.addClassIfTrue(this.corner, "corner");
 
-        if (this.rotate == 'flip') {
-            classUtil.addClasses([ "vertically", "flipped" ]);
-        } else if (this.rotate == "left") {
-            classUtil.addClasses([ "counterclockwise", "rotated" ]);
-        } else if (this.rotate == "right") {
-            classUtil.addClasses([ "clockwise", "rotated" ]);
+        if (ClassUtil.controlValues(IconComponent.rotateList, "rotate", this.rotate)) {
+            if (this.rotate == 'flip') {
+                classUtil.addClasses([ "vertically", "flipped" ]);
+            } else if (this.rotate == "left") {
+                classUtil.addClasses([ "counterclockwise", "rotated" ]);
+            } else if (this.rotate == "right") {
+                classUtil.addClasses([ "clockwise", "rotated" ]);
+            }
         }
         this.classes = classUtil.getStringClasses();
         this.initialized = true;

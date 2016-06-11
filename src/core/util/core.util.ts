@@ -8,4 +8,8 @@ export class CoreUtil {
         return element == undefined || element == null;
     }
 
+    public static stringIsEmpty(value:string) {
+        return value == "";
+    }
+
 }

@@ -7,6 +7,8 @@ import { ClassUtil } from "../../core/util/class.util";
 })
 export class CardMetaComponent {
 
+    static floatedList:string[] = [ "left", "right" ];
+
     initialized:boolean;
 
     @HostBinding("class") classes:string;
@@ -24,7 +26,7 @@ export class CardMetaComponent {
 
     ngOnChanges(changes) {
         let classUtil = new ClassUtil([ "meta", "dis-block" ]);
-        if (this.floated) {
+        if (ClassUtil.controlValues(CardMetaComponent.floatedList, "floated", this.floated)) {
             classUtil.addClasses([ this.floated, "floated" ]);
         }
         this.classes = classUtil.getStringClasses();
