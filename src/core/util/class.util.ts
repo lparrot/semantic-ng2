@@ -20,7 +20,7 @@ export class ClassUtil {
         this.classes = ClassUtil.clean(classesToAdd);
     }
 
-    public static controlValues(list:any[], attributeName:string, value:any, nullable?:boolean = false):boolean {
+    public static controlValues(list:any[], attributeName:string, value:any, nullable:boolean = false):boolean {
         if (value != undefined) {
             if (!nullable) {
                 if (CoreUtil.stringIsEmpty(value)) {
