@@ -1,41 +1,88 @@
 <demo-header [title]="'Modal'" [site]="'modules/modal.html'" [wiki]="'Modal'"></demo-header>
 
-<button smt-button [color]="'primary'" (click)="simpleModal.show()">Show simple modal</button>
-<button smt-button [color]="'primary'" (click)="basicModal.show()">Show basic modal</button>
-<button smt-button [color]="'primary'" (click)="eventModal.show()">Show event modal</button>
+<h2 class="ui header">Types</h2>
 
-<div smt-modal #simpleModal>
-    <div class="header">Modal header</div>
-    <div class="content">
+<h4 class="ui header">Modal</h4>
+
+<button smt-button [color]="'primary'" (click)="simpleModal.show()">Show</button>
+
+<h4 class="ui header">Basic</h4>
+
+<button smt-button [color]="'primary'" (click)="basicModal.show()">Show</button>
+
+<h4 class="ui header">Events</h4>
+
+<button smt-button [color]="'primary'" (click)="eventModal.show()">Show</button>
+
+<h2 class="ui header">Variations</h2>
+
+<h4 class="ui header">Full screen</h4>
+
+<button smt-button [color]="'primary'" (click)="fullscreenModal.show()">Show</button>
+
+<h4 class="ui header">Size</h4>
+
+<button smt-button [color]="'primary'" (click)="size = 'small'; sizeModal.show()">Small</button>
+<button smt-button [color]="'primary'" (click)="size = 'large'; sizeModal.show()">Large</button>
+
+<smt-modal #simpleModal>
+    <smt-modal-header>Modal header</smt-modal-header>
+    <smt-modal-content>
         <p>This is a simple modal.</p>
-    </div>
-    <div class="actions">
+    </smt-modal-content>
+    <smt-modal-action>
         <button smt-button [color]="'positive'">Approve</button>
         <button smt-button [color]="'primary'">Neutral</button>
         <button smt-button [color]="'negative'">Cancel</button>
-    </div>
-</div>
+    </smt-modal-action>
+</smt-modal>
 
-<div smt-modal #basicModal [basic]="true">
-    <div class="header">Modal header</div>
-    <div class="content">
-        <p>This is a simple modal.</p>
-    </div>
-    <div class="actions">
+<smt-modal #basicModal [basic]="true">
+    <smt-modal-header>Modal header</smt-modal-header>
+    <smt-modal-content [image]="'/app/assets/img/semantic/avatar/small/ade.jpg'">
+        <div class="description">
+            Basic modal with image container
+        </div>
+    </smt-modal-content>
+    <smt-modal-action>
         <button smt-button [color]="'positive'">Approve</button>
         <button smt-button [color]="'primary'">Neutral</button>
         <button smt-button [color]="'negative'">Cancel</button>
-    </div>
-</div>
+    </smt-modal-action>
+</smt-modal>
 
-<div smt-modal #eventModal (approveEvent)="approveEvent($event)" (denyEvent)="denyEvent($event)" (hiddenEvent)="hiddenEvent($event)" (hideEvent)="hideEvent($event)" (showEvent)="showEvent($event)" (visibleEvent)="visibleEvent($event)">
-    <div class="header">Modal header</div>
-    <div class="content">
-        <p>This is a simple modal.</p>
-    </div>
-    <div class="actions">
+<smt-modal #eventModal (approveEvent)="approveEvent($event)" (denyEvent)="denyEvent($event)" (hiddenEvent)="hiddenEvent($event)" (hideEvent)="hideEvent($event)" (showEvent)="showEvent($event)" (visibleEvent)="visibleEvent($event)">
+    <smt-modal-header>Modal header</smt-modal-header>
+    <smt-modal-content>
+        <p>This is a simple modal with events.</p>
+    </smt-modal-content>
+    <smt-modal-action>
         <button smt-button [color]="'positive'">Approve</button>
         <button smt-button [color]="'primary'">Neutral</button>
         <button smt-button [color]="'negative'">Cancel</button>
-    </div>
-</div>
+    </smt-modal-action>
+</smt-modal>
+
+<smt-modal #fullscreenModal [fullscreen]="true">
+    <smt-modal-header>Modal header</smt-modal-header>
+    <smt-modal-content>
+        <p>This is a full screen modal.</p>
+    </smt-modal-content>
+    <smt-modal-action>
+        <button smt-button [color]="'positive'">Approve</button>
+        <button smt-button [color]="'primary'">Neutral</button>
+        <button smt-button [color]="'negative'">Cancel</button>
+    </smt-modal-action>
+</smt-modal>
+
+<smt-modal #sizeModal [size]="size">
+    <smt-modal-header>Modal header</smt-modal-header>
+    <smt-modal-content>
+        <p>This is a {{size}} modal.</p>
+    </smt-modal-content>
+    <smt-modal-action>
+        <button smt-button [color]="'positive'">Approve</button>
+        <button smt-button [color]="'primary'">Neutral</button>
+        <button smt-button [color]="'negative'">Cancel</button>
+    </smt-modal-action>
+</smt-modal>

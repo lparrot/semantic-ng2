@@ -13,7 +13,7 @@ import { GravatarDirective } from "./components/gravatar/index";
 import { IconComponent, IconGroupComponent } from "./components/icon/index";
 import { LabelComponent } from "./components/label/index";
 import { MenuComponent, MenuBlockItemComponent, MenuItemDirective } from "./components/menu/index";
-import { ModalComponent } from "./components/modal/index";
+import { ModalComponent, ModalActionComponent, ModalContentComponent, ModalHeaderComponent } from "./components/modal/index";
 import { ProgressComponent } from "./components/progress/index";
 import { SegmentComponent } from "./components/segment/index";
 import { SidebarComponent } from "./components/sidebar/index";
@@ -37,7 +37,7 @@ export const SMT_DIRECTIVES:any[] = [
     IconComponent, IconGroupComponent,
     LabelComponent,
     MenuComponent, MenuBlockItemComponent, MenuItemDirective,
-    ModalComponent,
+    ModalComponent, ModalActionComponent, ModalContentComponent, ModalHeaderComponent,
     ProgressComponent,
     SegmentComponent,
     SidebarComponent
