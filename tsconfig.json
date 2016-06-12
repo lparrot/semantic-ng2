@@ -7,7 +7,7 @@
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "declaration": true,
+    "declaration": false,
     "outFile": "semantic-ng2.js"
   },
   "files": [
