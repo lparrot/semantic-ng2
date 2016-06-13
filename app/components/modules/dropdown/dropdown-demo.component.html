@@ -1,0 +1,35 @@
+<demo-header [title]="'Dropdown'" [site]="'modules/dropdown.html'" [wiki]="'Dropdown'"></demo-header>
+
+<h2 class="ui header">Types</h2>
+
+<h4 class="ui header">Inline</h4>
+
+<smt-dropdown [(value)]="dropdownSelected" [inline]="true" [selection]="false" [placeholder]="'Are you ready ?'">
+    <smt-dropdown-option [value]="'yes'">Yes</smt-dropdown-option>
+    <smt-dropdown-option [value]="'no'">No</smt-dropdown-option>
+</smt-dropdown>
+
+<span smt-label [color]="dropdownSelected ? 'green' : 'red'">{{dropdownSelected || 'none'}}</span>
+
+<h4 class="ui header">Selection</h4>
+
+<smt-dropdown [(value)]="selectionDropdownSelected" [placeholder]="'Gender'">
+    <smt-dropdown-option [value]="'male'">Male</smt-dropdown-option>
+    <smt-dropdown-option [value]="'female'">Female</smt-dropdown-option>
+</smt-dropdown>
+
+<span smt-label [color]="selectionDropdownSelected ? 'green' : 'red'">{{selectionDropdownSelected || 'none'}}</span>
+
+<h4 class="ui header">Search</h4>
+
+<smt-dropdown [(value)]="searchDropdownSelected" [search]="true" [placeholder]="'Select country'">
+    <smt-dropdown-option *ngFor="let country of countries" [value]="country.code"><i smt-flag="{{country.code}}"></i> {{country.label}}</smt-dropdown-option>
+</smt-dropdown>
+
+<span smt-label [color]="searchDropdownSelected ? 'green' : 'red'">{{searchDropdownSelected || 'none'}}</span>
+
+<h4 class="ui header">Multiple</h4>
+
+<smt-dropdown [multiple]="true" [placeholder]="'Select country'">
+    <smt-dropdown-option *ngFor="let country of countries" [value]="country.code"><i smt-flag="{{country.code}}"></i> {{country.label}}</smt-dropdown-option>
+</smt-dropdown>

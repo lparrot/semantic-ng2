@@ -4,7 +4,7 @@ import { SMT_DIRECTIVES, HttpService, SettingsService } from "../../../src/index
 import { HomeDemoComponent } from "../home/index";
 import { ButtonDemoComponent, ContainerDemoComponent, FlagDemoComponent, IconDemoComponent } from "../elements/index";
 import { MenuDemoComponent } from "../collections/index";
-import { AccordionDemoComponent, CheckboxDemoComponent, ModalDemoComponent, ProgressDemoComponent, SidebarDemoComponent } from "../modules/index";
+import { AccordionDemoComponent, CheckboxDemoComponent, DropdownDemoComponent, ModalDemoComponent, ProgressDemoComponent, SidebarDemoComponent } from "../modules/index";
 import { DatatableDemoComponent } from "../customs/index";
 import { CardDemoComponent } from "../views/index";
 import { GeneratorDemoComponent } from "../admin/index";
@@ -22,6 +22,7 @@ declare var $:any, toastr:any;
     { path: '/views/card', name: 'CardDemo', component: CardDemoComponent },
     { path: '/modules/accordion', name: 'AccordionDemo', component: AccordionDemoComponent },
     { path: '/modules/checkbox', name: 'CheckboxDemo', component: CheckboxDemoComponent },
+    { path: '/modules/dropdown', name: 'DropdownDemo', component: DropdownDemoComponent },
     { path: '/modules/modal', name: 'ModalDemo', component: ModalDemoComponent },
     { path: '/modules/progress', name: 'ProgressDemo', component: ProgressDemoComponent },
     { path: '/modules/sidebar', name: 'SidebarDemo', component: SidebarDemoComponent },
@@ -70,6 +71,9 @@ export class AppComponent {
         }, {
             label: 'Checkbox',
             route: [ 'CheckboxDemo' ]
+        }, {
+            label: 'Dropdown',
+            route: [ 'DropdownDemo' ]
         }, {
             label: 'Modal',
             route: [ 'ModalDemo' ]

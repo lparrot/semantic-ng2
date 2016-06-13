@@ -7,6 +7,7 @@ import { CheckboxComponent, CheckboxListComponent } from "./components/checkbox/
 import { ContainerComponent } from "./components/container/index";
 import { DatatableComponent } from "./components/datatable/index";
 import { DividerComponent } from "./components/divider/index";
+import { DropdownComponent, DropdownOptionComponent } from "./components/dropdown/index";
 import { FlagComponent } from "./components/flag/index";
 import { FormComponent } from "./components/form/index";
 import { GravatarDirective } from "./components/gravatar/index";
@@ -31,6 +32,7 @@ export const SMT_DIRECTIVES:any[] = [
     ContainerComponent,
     DatatableComponent,
     DividerComponent,
+    DropdownComponent, DropdownOptionComponent,
     FlagComponent,
     FormComponent,
     GravatarDirective,

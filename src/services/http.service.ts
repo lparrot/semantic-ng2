@@ -58,7 +58,7 @@ export class HttpService {
 
         // Envoi de la requête
         return this.http.request(request).map(res => res.json()).catch(err => {
-            return Observable.throw(err.json() || 'Une erreur technique est survenue');
+            return Observable.throw(err || 'Une erreur technique est survenue');
         });
     }
 

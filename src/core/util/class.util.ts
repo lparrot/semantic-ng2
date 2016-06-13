@@ -36,7 +36,7 @@ export class ClassUtil {
                 }
             }
             if (list.indexOf(value) == -1) {
-                console.error(`${attributeName}: Values ${value} is incorrect.`);
+                console.error(`${attributeName}: Value ${value} is incorrect.`);
             } else {
                 return true;
             }
