@@ -1,7 +1,7 @@
 **/*.log
-**/*.map
 **/*.scss
 **/*.ts
+!**/*.map
 !**/*.d.ts
 !**/*.js
 .bowerrc
