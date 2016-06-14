@@ -16,6 +16,7 @@ import { LabelComponent } from "./components/label/index";
 import { MenuComponent, MenuBlockItemComponent, MenuItemDirective } from "./components/menu/index";
 import { ModalComponent, ModalActionComponent, ModalContentComponent, ModalHeaderComponent } from "./components/modal/index";
 import { ProgressComponent } from "./components/progress/index";
+import { RevealComponent, RevealHiddenComponent, RevealVisibleComponent } from "./components/reveal/index";
 import { SegmentComponent } from "./components/segment/index";
 import { SidebarComponent } from "./components/sidebar/index";
 
@@ -41,6 +42,7 @@ export const SMT_DIRECTIVES:any[] = [
     MenuComponent, MenuBlockItemComponent, MenuItemDirective,
     ModalComponent, ModalActionComponent, ModalContentComponent, ModalHeaderComponent,
     ProgressComponent,
+    RevealComponent, RevealHiddenComponent, RevealVisibleComponent,
     SegmentComponent,
     SidebarComponent
 ];

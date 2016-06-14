@@ -1,0 +1,74 @@
+<demo-header [title]="'Reveal'" [site]="'elements/reveal.html'" [wiki]="'Reveal'"></demo-header>
+
+<h2 class="ui header">Types</h2>
+
+<h4 class="ui header">Fade</h4>
+
+<smt-reveal [fade]="true" [size]="'small'">
+    <img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/ade.jpg">
+</smt-reveal>
+
+<h4 class="ui header">Move</h4>
+
+<smt-reveal [move]="'left'" [size]="'small'">
+    <img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/chris.jpg">
+</smt-reveal>
+
+<smt-divider [hide]="true"></smt-divider>
+
+<smt-reveal [move]="'right'" [size]="'small'">
+    <img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/jenny.jpg">
+</smt-reveal>
+
+<smt-divider [hide]="true"></smt-divider>
+
+<smt-reveal [move]="'up'" [size]="'small'">
+    <img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/justen.jpg">
+</smt-reveal>
+
+<smt-divider [hide]="true"></smt-divider>
+
+<smt-reveal [move]="'down'" [size]="'small'">
+    <img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/nan.jpg">
+</smt-reveal>
+
+<h4 class="ui header">Rotate</h4>
+
+<smt-reveal [rotate]="'right'" [circular]="true" [size]="'small'">
+    <img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/stevie.jpg">
+</smt-reveal>
+
+<smt-divider [hide]="true"></smt-divider>
+
+<smt-reveal [rotate]="'left'" [circular]="true" [size]="'small'">
+    <img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/veronika.jpg">
+</smt-reveal>
+
+<h2 class="ui header">States</h2>
+
+<h4 class="ui header">Active</h4>
+
+<smt-checkbox [(model)]="revealActive" [checkboxStyle]="'toggle'"></smt-checkbox>
+
+<smt-reveal [move]="'left'" [active]="revealActive" [size]="'small'">
+    <img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/nan.jpg">
+</smt-reveal>
+
+<h2 class="ui header">Variations</h2>
+
+<h4 class="ui header">Instant</h4>
+
+<smt-container [text]="true">
+    <smt-reveal [instant]="true" [move]="'left'">
+        <img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+        <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/chris.jpg">
+    </smt-reveal>
+</smt-container>

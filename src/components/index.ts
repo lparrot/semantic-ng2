@@ -13,5 +13,6 @@ export * from "./label/index";
 export * from "./menu/index";
 export * from "./modal/index";
 export * from "./progress/index";
+export * from "./reveal/index";
 export * from "./segment/index";
 export * from "./sidebar/index";
