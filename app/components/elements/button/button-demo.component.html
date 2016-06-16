@@ -101,15 +101,15 @@
 
 <h4 class="ui header">Inverted</h4>
 
-<div smt-segment [inverted]="true">
+<smt-segment [inverted]="true">
     <a smt-button [inverted]="true">Standard</a>
     <a smt-button *ngFor="let color of lists.color" [inverted]="true" [color]="color">{{color | capitalize}}</a>
-</div>
+</smt-segment>
 <smt-divider [hide]="true"></smt-divider>
-<div smt-segment [inverted]="true">
+<smt-segment [inverted]="true">
     <a smt-button [inverted]="true" [basic]="true">Basic</a>
     <a smt-button *ngFor="let color of lists.color" [inverted]="true" [basic]="true" [color]="color">{{color | capitalize}}</a>
-</div>
+</smt-segment>
 
 <h4 class="ui header">Conditional</h4>
 
@@ -131,15 +131,15 @@
 
 <h4 class="ui header">Floated</h4>
 
-<div smt-segment [clearing]="true">
+<smt-segment [clearing]="true">
     <a smt-button [floated]="'left'">Left</a>
     <a smt-button [floated]="'right'">Right</a>
-</div>
+</smt-segment>
 
 <h4 class="ui header">Vertically attached</h4>
 
 <a smt-button [attached]="'top'">Top</a>
-<div smt-segment [attached]="true">Attached segment</div>
+<smt-segment [attached]="true">Attached segment</smt-segment>
 <a smt-button [attached]="'bottom'">Bottom</a>
 
 <h4 class="ui header">Horizontally attached</h4>

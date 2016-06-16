@@ -30,20 +30,20 @@
 
 <h4 class="ui header">Inverted</h4>
 
-<div smt-segment [inverted]="true">
+<smt-segment [inverted]="true">
     <smt-progress [inverted]="true" [value]="20" [label]="'Uploading Files'"></smt-progress>
     <smt-progress [inverted]="true" [value]="100" [label]="'Success'" [state]="'success'"></smt-progress>
     <smt-progress [inverted]="true" [value]="100" [label]="'Warning'" [state]="'warning'"></smt-progress>
     <smt-progress [inverted]="true" [value]="100" [label]="'Error'" [state]="'error'"></smt-progress>
-</div>
+</smt-segment>
 
 <h4 class="ui header">Attached</h4>
 
-<div smt-segment>
+<smt-segment>
     <smt-progress [attached]="'top'" [(value)]="value1"></smt-progress>
     <p>La la la la la</p>
     <smt-progress [attached]="'bottom'" [(value)]="value2"></smt-progress>
-</div>
+</smt-segment>
 
 <h4 class="ui header">Size</h4>
 
@@ -59,6 +59,6 @@
 
 <h4 class="ui header">Inverted color</h4>
 
-<div smt-segment [inverted]="true">
+<smt-segment [inverted]="true">
     <smt-progress [value]="20" [inverted]="true" *ngFor="let color of lists.color" [color]="color"></smt-progress>
-</div>
+</smt-segment>

@@ -9,6 +9,7 @@ export * from "./flag/index";
 export * from "./form/index";
 export * from "./gravatar/index";
 export * from "./icon/index";
+export * from "./image/index";
 export * from "./label/index";
 export * from "./menu/index";
 export * from "./modal/index";

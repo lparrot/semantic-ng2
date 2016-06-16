@@ -12,12 +12,13 @@ import { FlagComponent } from "./components/flag/index";
 import { FormComponent } from "./components/form/index";
 import { GravatarDirective } from "./components/gravatar/index";
 import { IconComponent, IconGroupComponent } from "./components/icon/index";
+import { ImageComponent } from "./components/image/index";
 import { LabelComponent } from "./components/label/index";
 import { MenuComponent, MenuBlockItemComponent, MenuItemDirective } from "./components/menu/index";
 import { ModalComponent, ModalActionComponent, ModalContentComponent, ModalHeaderComponent } from "./components/modal/index";
 import { ProgressComponent } from "./components/progress/index";
 import { RevealComponent, RevealHiddenComponent, RevealVisibleComponent } from "./components/reveal/index";
-import { SegmentComponent } from "./components/segment/index";
+import { SegmentComponent, SegmentGroupComponent } from "./components/segment/index";
 import { SidebarComponent } from "./components/sidebar/index";
 
 export * from "./components/index";
@@ -38,12 +39,13 @@ export const SMT_DIRECTIVES:any[] = [
     FormComponent,
     GravatarDirective,
     IconComponent, IconGroupComponent,
+    ImageComponent,
     LabelComponent,
     MenuComponent, MenuBlockItemComponent, MenuItemDirective,
     ModalComponent, ModalActionComponent, ModalContentComponent, ModalHeaderComponent,
     ProgressComponent,
     RevealComponent, RevealHiddenComponent, RevealVisibleComponent,
-    SegmentComponent,
+    SegmentComponent, SegmentGroupComponent,
     SidebarComponent
 ];
 
