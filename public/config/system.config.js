@@ -4,9 +4,9 @@
 
     // map tells the System loader where to look for things
     var map = {
-        'typescript': 'typescript/lib/typescript.js',
-        'rxjs': 'rxjs',
-        '@angular': '@angular'
+        'typescript': 'node_modules/typescript/lib/typescript.js',
+        'rxjs': 'node_modules/rxjs',
+        '@angular': 'node_modules/@angular'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
@@ -49,7 +49,7 @@
         baseUrl: '.',
         transpiler: 'typescript',
         typescriptOptions: {
-            module: "system",
+            module: "commonjs",
             experimentalDecorators: true,
             emitDecoratorMetadata: true
         },

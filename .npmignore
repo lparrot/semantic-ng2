@@ -21,6 +21,7 @@
 /routes
 /build/css/demo*
 /build/js/demo*
+/build/js/bundle*
 bower.json
 gulpfile.js
 bs-config.json

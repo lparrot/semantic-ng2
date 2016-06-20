@@ -10,12 +10,19 @@ var strip_js = require('gulp-strip-comments');
 var strip_css = require('gulp-strip-css-comments');
 var minify_js = require('gulp-minify');
 var minify_css = require('gulp-minify-css');
+var typings = require("gulp-typings");
+var bower = require("gulp-bower");
+var typescript = require("gulp-typescript");
 
-gulp.task('default', ['js', 'css', 'copy']);
+var SystemBuilder = require('systemjs-builder');
+var builder = new SystemBuilder();
+var tsconfigFile = require('./tsconfig.json');
 
-gulp.task('bundle', ['bundle']);
+var tsProject = typescript.createProject('tsconfig.json');
 
-gulp.task('js', ["build_js:angular2", 'build_js:demo']);
+gulp.task('default', ['typings', 'bower', 'typescript', 'js', 'css', 'copy']);
+
+gulp.task('js', ["build_js:angular2", 'build_js:demo', 'build_js:systemjs']);
 
 gulp.task('css', ['build_css:vendors', 'build_css:demo', 'build_css:semantic-ng2']);
 
@@ -24,10 +31,42 @@ gulp.task('copy', ['copy:fonts', 'copy:images']);
 gulp.task('clean', function () {
     return del.sync([
         'build/**/*',
-        'node_modules/**/*',
+        // 'node_modules/**/*',
         'typings/**/*',
         'vendors/**/*'
     ])
+});
+
+gulp.task('typings', function () {
+    return gulp.src("./typings.json")
+        .pipe(typings())
+});
+
+gulp.task('bower', function () {
+    return bower();
+});
+
+gulp.task('typescript', ["typings"], function () {
+    return gulp.src(tsconfigFile.files)
+        .pipe(typescript(tsProject));
+});
+
+gulp.task("build_js:systemjs", ["typescript"], function () {
+
+    builder.loadConfig('public/config/system.config.js')
+        .then(function () {
+            var outputFile = './build/js/bundle.min.js';
+            return builder.buildStatic('./app/main', outputFile, {
+                minify: true,
+                mangle: true,
+                rollup: true
+            });
+        })
+        .then(function () {
+            console.log('bundle built successfully!');
+        })
+    ;
+
 });
 
 gulp.task('build_js:angular2', function () {
@@ -43,7 +82,7 @@ gulp.task('build_js:angular2', function () {
         .pipe(gulp.dest('./build/js'));
 });
 
-gulp.task('src:vendors', function () {
+gulp.task('src:vendors', ["bower"], function () {
     return gulp.src([
         './vendors/jquery/dist/jquery.js',
         './vendors/lodash/dist/lodash.js',
@@ -107,7 +146,7 @@ gulp.task('build_css:semantic-ng2', function () {
         .pipe(gulp.dest('./build/css/'));
 });
 
-gulp.task('copy:fonts', function () {
+gulp.task('copy:fonts', ["bower"], function () {
     return gulp.src([
         './vendors/semantic/dist/themes/default/assets/fonts/**'
     ])
@@ -115,7 +154,7 @@ gulp.task('copy:fonts', function () {
         .pipe(gulp.dest('./build/css/themes/default/assets/fonts/'))
 });
 
-gulp.task('copy:images', function () {
+gulp.task('copy:images', ["bower"], function () {
     return gulp.src([
         './vendors/semantic/dist/themes/default/assets/images/**'
     ])

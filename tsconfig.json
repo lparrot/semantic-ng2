@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "system",
+    "module": "commonjs",
     "target": "es5",
     "moduleResolution": "node",
     "noImplicitAny": false,
@@ -12,6 +12,6 @@
   },
   "files": [
     "semantic-ng2.ts",
-    "typings/main.d.ts"
+    "typings/index.d.ts"
   ]
 }
