@@ -111,7 +111,7 @@ gulp.task('build_js:demo', ['src:vendors'], function () {
         .pipe(gulp.dest('./build/js/'));
 });
 
-gulp.task('build_css:vendors', function () {
+gulp.task('build_css:vendors', ["bower"], function () {
     return gulp.src([
         './vendors/semantic/dist/semantic.css',
         './vendors/toastr/toastr.css'
