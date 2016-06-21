@@ -17,8 +17,19 @@
         </div>
     </app>
 </div>
+
+<% if(environment == "development") { %>
+<script src="/build/js/angular2.js"></script>
+<script src="/build/js/demo.js"></script>
+<script src="/config/system.config.dev.js"></script>
+<script>
+    System.import('/app/main.ts').then(null, console.error.bind(console));
+</script>
+<% } else { %>
 <script src="/build/js/angular2-min.js"></script>
 <script src="/build/js/demo-min.js"></script>
 <script src="/build/js/bundle.min.js"></script>
+<% } %>
+
 </body>
 </html>
