@@ -88,7 +88,8 @@ gulp.task('src:vendors', ["bower"], function () {
         './vendors/lodash/dist/lodash.js',
         './vendors/JavaScript-MD5/js/md5.js',
         './vendors/semantic/dist/semantic.js',
-        './vendors/toastr/toastr.js'
+        './vendors/toastr/toastr.js',
+        './vendors/prism/prism.js'
     ])
         .pipe(concat('vendors.js'))
         .pipe(replace('module.error(error.pusher);', ''))
@@ -114,7 +115,8 @@ gulp.task('build_js:demo', ['src:vendors'], function () {
 gulp.task('build_css:vendors', ["bower"], function () {
     return gulp.src([
         './vendors/semantic/dist/semantic.css',
-        './vendors/toastr/toastr.css'
+        './vendors/toastr/toastr.css',
+        './vendors/prism/themes/prism.css'
     ])
         .pipe(concat('vendors.css'))
         .pipe(strip_css())

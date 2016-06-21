@@ -11,6 +11,12 @@
 
 <span smt-label [color]="dropdownSelected ? 'green' : 'red'">{{dropdownSelected || 'none'}}</span>
 
+<codeblock prismjs="html">&lt;smt-dropdown [(value)]="dropdownSelected" [inline]="true" [selection]="false" [placeholder]="'Are you ready ?'">
+    &lt;smt-dropdown-option [value]="'yes'">Yes&lt;/smt-dropdown-option>
+    &lt;smt-dropdown-option [value]="'no'">No&lt;/smt-dropdown-option>
+&lt;/smt-dropdown>
+</codeblock>
+
 <h4 class="ui header">Selection</h4>
 
 <smt-dropdown [(value)]="selectionDropdownSelected" [placeholder]="'Gender'">
@@ -20,6 +26,12 @@
 
 <span smt-label [color]="selectionDropdownSelected ? 'green' : 'red'">{{selectionDropdownSelected || 'none'}}</span>
 
+<codeblock prismjs="html">&lt;smt-dropdown [(value)]="selectionDropdownSelected" [placeholder]="'Gender'">
+    &lt;smt-dropdown-option [value]="'male'">Male&lt;/smt-dropdown-option>
+    &lt;smt-dropdown-option [value]="'female'">Female&lt;/smt-dropdown-option>
+&lt;/smt-dropdown>
+</codeblock>
+
 <h4 class="ui header">Search</h4>
 
 <smt-dropdown [(value)]="searchDropdownSelected" [search]="true" [placeholder]="'Select country'">
@@ -28,8 +40,20 @@
 
 <span smt-label [color]="searchDropdownSelected ? 'green' : 'red'">{{searchDropdownSelected || 'none'}}</span>
 
+<codeblock prismjs="html">&lt;smt-dropdown [(value)]="searchDropdownSelected" [search]="true" [placeholder]="'Select country'">
+    &lt;smt-dropdown-option *ngFor="let country of countries" [value]="country.code">&lt;i smt-flag="...">&lt;/i> ...&lt;/smt-dropdown-option>
+&lt;/smt-dropdown>
+</codeblock>
+
 <h4 class="ui header">Multiple</h4>
 
-<smt-dropdown [multiple]="true" [placeholder]="'Select country'">
+<smt-dropdown [(value)]="searchMultipleSelected" [multiple]="true" [placeholder]="'Select country'">
     <smt-dropdown-option *ngFor="let country of countries" [value]="country.code"><i smt-flag="{{country.code}}"></i> {{country.label}}</smt-dropdown-option>
 </smt-dropdown>
+
+<span smt-label [color]="searchMultipleSelected ? 'green' : 'red'">{{searchMultipleSelected || 'none'}}</span>
+
+<codeblock prismjs="html">&lt;smt-dropdown [multiple]="true" [placeholder]="'Select country'">
+    &lt;smt-dropdown-option *ngFor="let country of countries" [value]="country.code">&lt;i smt-flag="...">&lt;/i> ...&lt;/smt-dropdown-option>
+&lt;/smt-dropdown>
+</codeblock>

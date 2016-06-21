@@ -6,11 +6,19 @@
 <smt-divider [hide]="true"></smt-divider>
 <span class="ui label" [ngClass]="{green: itemChecked, red:!itemChecked}">{{itemChecked ? 'Checked' : 'Unchecked'}}</span>
 
+<codeblock prismjs="html">&lt;smt-checkbox [label]="'Check for purchase'" [(model)]="itemChecked">&lt;/smt-checkbox>
+&lt;span class="ui label" [ngClass]="{green: itemChecked, red:!itemChecked}">{{itemChecked ? 'Checked' : 'Unchecked'}}&lt;/span>
+</codeblock>
+
 <h4 class="ui header">Radio</h4>
 
 <smt-checkbox [radio]="true" [value]="'radio_choice'" [(model)]="itemRadio" [label]="'Radio choice'"></smt-checkbox>
 <smt-divider [hide]="true"></smt-divider>
 <span class="ui label">Selected : {{itemRadio ? itemRadio : 'None'}}</span>
+
+<codeblock prismjs="html">&lt;smt-checkbox [radio]="true" [value]="'radio_choice'" [(model)]="itemRadio" [label]="'Radio choice'">&lt;/smt-checkbox>
+&lt;span class="ui label">Selected : {{itemRadio ? itemRadio : 'None'}}&lt;/span>
+</codeblock>
 
 <h4 class="ui header">Radio list</h4>
 
@@ -31,11 +39,32 @@
 <smt-divider [hide]="true"></smt-divider>
 <span class="ui label">Selected : {{itemRadioList ? itemRadioList : 'None'}}</span>
 
+<codeblock prismjs="html">&lt;smt-checkbox-radio-list [name]="'frequency'" [(model)]="itemRadioList">
+    &lt;div class="field">
+        &lt;smt-checkbox [value]="'once_week'" [label]="'Once a week'">&lt;/smt-checkbox>
+    &lt;/div>
+    &lt;div class="field">
+        &lt;smt-checkbox [value]="'2_3_times_week'" [label]="'2-3 times a week'">&lt;/smt-checkbox>
+    &lt;/div>
+    &lt;div class="field">
+        &lt;smt-checkbox [value]="'once_day'" [label]="'Once a day'">&lt;/smt-checkbox>
+    &lt;/div>
+    &lt;div class="field">
+        &lt;smt-checkbox [value]="'twice_day'" [label]="'Twice a day'">&lt;/smt-checkbox>
+    &lt;/div>
+&lt;/smt-checkbox-radio-list>
+&lt;span class="ui label">Selected : {{itemRadioList ? itemRadioList : 'None'}}&lt;/span>
+</codeblock>
+
 <h4 class="ui header">Checkbox style</h4>
 
 <smt-checkbox [label]="'Slider'" [checkboxStyle]="'slider'"></smt-checkbox>
 <smt-divider [hide]="true"></smt-divider>
 <smt-checkbox [label]="'Toggle'" [checkboxStyle]="'toggle'"></smt-checkbox>
+
+<codeblock prismjs="html">&lt;smt-checkbox [label]="'Slider'" [checkboxStyle]="'slider'">&lt;/smt-checkbox>
+&lt;smt-checkbox [label]="'Toggle'" [checkboxStyle]="'toggle'">&lt;/smt-checkbox>
+</codeblock>
 
 <h4 class="ui header">Checkbox events</h4>
 
@@ -43,3 +72,9 @@
               (changeEvent)="changeEvent()" (beforeCheckedEvent)="beforeCheckedEvent()" (beforeDeterminateEvent)="beforeDeterminateEvent()" (beforeIndeterminateEvent)="beforeIndeterminateEvent()"
               (beforeUncheckedEvent)="beforeUncheckedEvent()" (checkedEvent)="checkedEvent()" (determinateEvent)="determinateEvent()" (disableEvent)="disableEvent()"
               (enableEvent)="enableEvent()" (indeterminateEvent)="indeterminateEvent()" (uncheckedEvent)="uncheckedEvent()"></smt-checkbox>
+
+<codeblock prismjs="html">&lt;smt-checkbox [label]="'Event'"
+(changeEvent)="changeEvent()" (beforeCheckedEvent)="beforeCheckedEvent()" (beforeDeterminateEvent)="beforeDeterminateEvent()" (beforeIndeterminateEvent)="beforeIndeterminateEvent()"
+(beforeUncheckedEvent)="beforeUncheckedEvent()" (checkedEvent)="checkedEvent()" (determinateEvent)="determinateEvent()" (disableEvent)="disableEvent()"
+(enableEvent)="enableEvent()" (indeterminateEvent)="indeterminateEvent()" (uncheckedEvent)="uncheckedEvent()">&lt;/smt-checkbox>
+</codeblock>

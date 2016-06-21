@@ -6,13 +6,60 @@
 
 <button smt-button [color]="'primary'" (click)="simpleModal.show()">Show</button>
 
+<codeblock prismjs="html">&lt;button smt-button [color]="'primary'" (click)="simpleModal.show()">Show&lt;/button>
+    
+&lt;smt-modal #simpleModal>
+    &lt;smt-modal-header>Modal header&lt;/smt-modal-header>
+    &lt;smt-modal-content>
+        &lt;p>This is a simple modal.&lt;/p>
+    &lt;/smt-modal-content>
+    &lt;smt-modal-action>
+        &lt;button smt-button [color]="'positive'">Approve&lt;/button>
+        &lt;button smt-button [color]="'primary'">Neutral&lt;/button>
+        &lt;button smt-button [color]="'negative'">Cancel&lt;/button>
+    &lt;/smt-modal-action>
+&lt;/smt-modal>
+</codeblock>
+
 <h4 class="ui header">Basic</h4>
 
 <button smt-button [color]="'primary'" (click)="basicModal.show()">Show</button>
 
+<codeblock prismjs="html">&lt;button smt-button [color]="'primary'" (click)="basicModal.show()">Show&lt;/button>
+    
+&lt;smt-modal #basicModal [basic]="true">
+    &lt;smt-modal-header>Modal header&lt;/smt-modal-header>
+    &lt;smt-modal-content [image]="'/app/assets/img/semantic/avatar/small/ade.jpg'">
+        &lt;div class="description">
+            Basic modal with image container
+        &lt;/div>
+    &lt;/smt-modal-content>
+    &lt;smt-modal-action>
+        &lt;button smt-button [color]="'positive'">Approve&lt;/button>
+        &lt;button smt-button [color]="'primary'">Neutral&lt;/button>
+        &lt;button smt-button [color]="'negative'">Cancel&lt;/button>
+    &lt;/smt-modal-action>
+&lt;/smt-modal>
+</codeblock>
+
 <h4 class="ui header">Events</h4>
 
 <button smt-button [color]="'primary'" (click)="eventModal.show()">Show</button>
+
+<codeblock prismjs="html">&lt;button smt-button [color]="'primary'" (click)="eventModal.show()">Show&lt;/button>
+    
+&lt;smt-modal #eventModal (approveEvent)="approveEvent($event)" (denyEvent)="denyEvent($event)" (hiddenEvent)="hiddenEvent($event)" (hideEvent)="hideEvent($event)" (showEvent)="showEvent($event)" (visibleEvent)="visibleEvent($event)">
+    &lt;smt-modal-header>Modal header&lt;/smt-modal-header>
+    &lt;smt-modal-content>
+        &lt;p>This is a simple modal with events.&lt;/p>
+    &lt;/smt-modal-content>
+    &lt;smt-modal-action>
+        &lt;button smt-button [color]="'positive'">Approve&lt;/button>
+        &lt;button smt-button [color]="'primary'">Neutral&lt;/button>
+        &lt;button smt-button [color]="'negative'">Cancel&lt;/button>
+    &lt;/smt-modal-action>
+&lt;/smt-modal>
+</codeblock>
 
 <h2 class="ui header">Variations</h2>
 
@@ -20,10 +67,41 @@
 
 <button smt-button [color]="'primary'" (click)="fullscreenModal.show()">Show</button>
 
+<codeblock prismjs="html">&lt;button smt-button [color]="'primary'" (click)="fullscreenModal.show()">Show&lt;/button>
+    
+&lt;smt-modal #fullscreenModal [fullscreen]="true">
+    &lt;smt-modal-header>Modal header&lt;/smt-modal-header>
+    &lt;smt-modal-content>
+        &lt;p>This is a full screen modal.&lt;/p>
+    &lt;/smt-modal-content>
+    &lt;smt-modal-action>
+        &lt;button smt-button [color]="'positive'">Approve&lt;/button>
+        &lt;button smt-button [color]="'primary'">Neutral&lt;/button>
+        &lt;button smt-button [color]="'negative'">Cancel&lt;/button>
+    &lt;/smt-modal-action>
+&lt;/smt-modal>
+</codeblock>
+
 <h4 class="ui header">Size</h4>
 
 <button smt-button [color]="'primary'" (click)="size = 'small'; sizeModal.show()">Small</button>
 <button smt-button [color]="'primary'" (click)="size = 'large'; sizeModal.show()">Large</button>
+
+<codeblock prismjs="html">&lt;button smt-button [color]="'primary'" (click)="size = 'small'; sizeModal.show()">Small&lt;/button>
+&lt;button smt-button [color]="'primary'" (click)="size = 'large'; sizeModal.show()">Large&lt;/button>
+    
+&lt;smt-modal #sizeModal [size]="size">
+    &lt;smt-modal-header>Modal header&lt;/smt-modal-header>
+    &lt;smt-modal-content>
+        &lt;p>This is a {{size}} modal.&lt;/p>
+    &lt;/smt-modal-content>
+    &lt;smt-modal-action>
+        &lt;button smt-button [color]="'positive'">Approve&lt;/button>
+        &lt;button smt-button [color]="'primary'">Neutral&lt;/button>
+        &lt;button smt-button [color]="'negative'">Cancel&lt;/button>
+    &lt;/smt-modal-action>
+&lt;/smt-modal>
+</codeblock>
 
 <smt-modal #simpleModal>
     <smt-modal-header>Modal header</smt-modal-header>

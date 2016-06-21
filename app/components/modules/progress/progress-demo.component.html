@@ -4,9 +4,15 @@
 
 <smt-progress #progress1 [value]="value1" [total]="100" [label]="'Simple progress bar (Total:{total} / Value:{value} / Percent:{percent} / Left:{left})'"></smt-progress>
 
+<codeblock prismjs="html">&lt;smt-progress #progress1 [value]="value1" [total]="100" [label]="'Simple progress bar (Total:{total} / Value:{value} / Percent:{percent} / Left:{left})'">&lt;/smt-progress>
+</codeblock>
+
 <h4 class="ui header">Indicating</h4>
 
 <smt-progress #progress2 [(value)]="value2" [label]="'Indicating (Total:{total} / Value:{value} / Percent:{percent} / Left:{left})'" [indicating]="true"></smt-progress>
+
+<codeblock prismjs="html">&lt;smt-progress #progress2 [(value)]="value2" [label]="'Indicating (Total:{total} / Value:{value} / Percent:{percent} / Left:{left})'" [indicating]="true">&lt;/smt-progress>
+</codeblock>
 
 <h2 class="ui header">States</h2>
 
@@ -14,17 +20,29 @@
 
 <smt-progress [value]="100" [state]="'success'" [label]="'Success: Everything worked, your file is all ready.'"></smt-progress>
 
+<codeblock prismjs="html">&lt;smt-progress [value]="100" [state]="'success'" [label]="'Success: Everything worked, your file is all ready.'">&lt;/smt-progress>
+</codeblock>
+
 <h4 class="ui header">Warning</h4>
 
 <smt-progress [value]="100" [state]="'warning'" [label]="'Warning: Your file didn\'t meet the minimum resolution requirements.'"></smt-progress>
+
+<codeblock prismjs="html">&lt;smt-progress [value]="100" [state]="'warning'" [label]="'Warning: Your file didn\'t meet the minimum resolution requirements.'">&lt;/smt-progress>
+</codeblock>
 
 <h4 class="ui header">Error</h4>
 
 <smt-progress [value]="100" [state]="'error'" [label]="'Error: There was an error.'"></smt-progress>
 
+<codeblock prismjs="html">&lt;smt-progress [value]="100" [state]="'error'" [label]="'Error: There was an error.'">&lt;/smt-progress>
+</codeblock>
+
 <h4 class="ui header">Disabled</h4>
 
 <smt-progress [value]="25" [state]="'disabled'"></smt-progress>
+
+<codeblock prismjs="html">&lt;smt-progress [value]="25" [state]="'disabled'">&lt;/smt-progress>
+</codeblock>
 
 <h2 class="ui header">Variations</h2>
 
@@ -37,6 +55,14 @@
     <smt-progress [inverted]="true" [value]="100" [label]="'Error'" [state]="'error'"></smt-progress>
 </smt-segment>
 
+<codeblock prismjs="html">&lt;smt-segment [inverted]="true">
+    &lt;smt-progress [inverted]="true" [value]="20" [label]="'Uploading Files'">&lt;/smt-progress>
+    &lt;smt-progress [inverted]="true" [value]="100" [label]="'Success'" [state]="'success'">&lt;/smt-progress>
+    &lt;smt-progress [inverted]="true" [value]="100" [label]="'Warning'" [state]="'warning'">&lt;/smt-progress>
+    &lt;smt-progress [inverted]="true" [value]="100" [label]="'Error'" [state]="'error'">&lt;/smt-progress>
+&lt;/smt-segment>
+</codeblock>
+
 <h4 class="ui header">Attached</h4>
 
 <smt-segment>
@@ -44,6 +70,13 @@
     <p>La la la la la</p>
     <smt-progress [attached]="'bottom'" [(value)]="value2"></smt-progress>
 </smt-segment>
+
+<codeblock prismjs="html">&lt;smt-segment>
+    &lt;smt-progress [attached]="'top'" [(value)]="value1">&lt;/smt-progress>
+    &lt;p>La la la la la&lt;/p>
+    &lt;smt-progress [attached]="'bottom'" [(value)]="value2">&lt;/smt-progress>
+&lt;/smt-segment>
+</codeblock>
 
 <h4 class="ui header">Size</h4>
 
@@ -53,12 +86,27 @@
 <smt-progress [size]="'large'" [label]="'Large'"></smt-progress>
 <smt-progress [size]="'big'" [label]="'Big'"></smt-progress>
 
+<codeblock prismjs="html">&lt;smt-progress [size]="'tiny'" [label]="'Tiny'">&lt;/smt-progress>
+&lt;smt-progress [size]="'small'" [label]="'Small'">&lt;/smt-progress>
+&lt;smt-progress [label]="'Standard'">&lt;/smt-progress>
+&lt;smt-progress [size]="'large'" [label]="'Large'">&lt;/smt-progress>
+&lt;smt-progress [size]="'big'" [label]="'Big'">&lt;/smt-progress>
+</codeblock>
+
 <h4 class="ui header">Color</h4>
 
 <smt-progress [value]="20" *ngFor="let color of lists.color" [color]="color"></smt-progress>
+
+<codeblock prismjs="html">&lt;smt-progress [value]="20" *ngFor="let color of lists.color" [color]="color">&lt;/smt-progress>
+</codeblock>
 
 <h4 class="ui header">Inverted color</h4>
 
 <smt-segment [inverted]="true">
     <smt-progress [value]="20" [inverted]="true" *ngFor="let color of lists.color" [color]="color"></smt-progress>
 </smt-segment>
+
+<codeblock prismjs="html">&lt;smt-segment [inverted]="true">
+    &lt;smt-progress [value]="20" [inverted]="true" *ngFor="let color of lists.color" [color]="color">&lt;/smt-progress>
+&lt;/smt-segment>
+</codeblock>

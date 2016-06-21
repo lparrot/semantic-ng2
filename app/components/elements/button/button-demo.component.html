@@ -7,6 +7,12 @@
 <b *ngIf="apiInfo.status == 'wait'">Please wait...</b>
 <b *ngIf="apiInfo.status == 'completed'">Completed ! Show results on console...</b>
 
+<codeblock prismjs="html">&lt;a smt-button [color]="'red'" [api]="apiInfo" (complete)="onCompleteApi($event)">Find users paginate api&lt;/a>
+&lt;b *ngIf="apiInfo.status == 'start'">Click on button for api button example...&lt;/b>
+&lt;b *ngIf="apiInfo.status == 'wait'">Please wait...&lt;/b>
+&lt;b *ngIf="apiInfo.status == 'completed'">Completed ! Show results on console...&lt;/b>
+</codeblock>
+
 <h4 class="ui header">Icons</h4>
 
 <a smt-button [icon]="'settings'">Settings</a>
@@ -15,6 +21,14 @@
 <a smt-button [icon]="'settings'" [iconOnly]="true"></a>
 <a smt-button [icon]="'shop'" [iconOnly]="true"></a>
 <a smt-button [icon]="'tags'" [iconOnly]="true"></a>
+
+<codeblock prismjs="html">&lt;a smt-button [icon]="'settings'">Settings&lt;/a>
+&lt;a smt-button [icon]="'shop'">Shop&lt;/a>
+&lt;a smt-button [icon]="'tags'">Tags&lt;/a>
+&lt;a smt-button [icon]="'settings'" [iconOnly]="true">&lt;/a>
+&lt;a smt-button [icon]="'shop'" [iconOnly]="true">&lt;/a>
+&lt;a smt-button [icon]="'tags'" [iconOnly]="true">&lt;/a>
+</codeblock>
 
 <h4 class="ui header">Animated</h4>
 
@@ -37,11 +51,34 @@
     <hidden>$12.99 a month</hidden>
 </a>
 
+<codeblock prismjs="html">&lt;a smt-button [animated]="true">
+    &lt;visible>Next&lt;/visible>
+    &lt;hidden>
+        &lt;i smt-icon="right arrow">&lt;/i>
+    &lt;/hidden>
+&lt;/a>
+&lt;a smt-button [animated]="{vertical: true}">
+    &lt;visible>
+        &lt;i smt-icon="shop">&lt;/i>
+    &lt;/visible>
+    &lt;hidden>Shop&lt;/hidden>
+&lt;/a>
+&lt;a smt-button [animated]="{fade: true}">
+    &lt;visible>Sign-up a Pro account&lt;/visible>
+    &lt;hidden>$12.99 a month&lt;/hidden>
+&lt;/a>
+</codeblock>
+
 <h4 class="ui header">Colors</h4>
 
 <a smt-button>Normal</a>
 <a smt-button *ngFor="let emphasis of lists.emphasis" [color]="emphasis">{{emphasis | capitalize}}</a>
 <a smt-button *ngFor="let color of lists.color" [color]="color">{{color | capitalize}}</a>
+
+<codeblock prismjs="html">&lt;a smt-button>...&lt;/a>
+&lt;a smt-button *ngFor="let emphasis of lists.emphasis" [color]="emphasis">...&lt;/a>
+&lt;a smt-button *ngFor="let color of lists.color" [color]="color">...&lt;/a>
+</codeblock>
 
 <h4 class="ui header">States</h4>
 
@@ -49,15 +86,28 @@
 <a smt-button [color]="'primary'" [disabled]="true">Disabled</a>
 <a smt-button [color]="'primary'" [loading]="true">Loading</a>
 
+<codeblock prismjs="html">&lt;a smt-button [color]="'primary'" [active]="true">Active&lt;/a>
+&lt;a smt-button [color]="'primary'" [disabled]="true">Disabled&lt;/a>
+&lt;a smt-button [color]="'primary'" [loading]="true">Loading&lt;/a>
+</codeblock>
+
 <h4 class="ui header">Basic</h4>
 
 <a smt-button [basic]="true">Basic</a>
 <a smt-button [basic]="true" [color]="'red'">Red</a>
 <a smt-button [basic]="true" [icon]="'user'">Add friend</a>
 
+<codeblock prismjs="html">&lt;a smt-button [basic]="true">Basic&lt;/a>
+&lt;a smt-button [basic]="true" [color]="'red'">Red&lt;/a>
+&lt;a smt-button [basic]="true" [icon]="'user'">Add friend&lt;/a>
+</codeblock>
+
 <h4 class="ui header">Sizes</h4>
 
 <a smt-button *ngFor="let size of lists.size" [color]="'teal'" [size]="size">{{size | capitalize}}</a>
+
+<codeblock prismjs="html">&lt;a smt-button *ngFor="let size of lists.size" [color]="'teal'" [size]="size">...&lt;/a>
+</codeblock>
 
 <h4 class="ui header">Circular</h4>
 
@@ -65,11 +115,20 @@
 <a smt-button [circular]="true" [icon]="'shop'" [basic]="true"></a>
 <a smt-button [circular]="true" [icon]="'tags'" [basic]="true" [color]="'red'"></a>
 
+<codeblock prismjs="html">&lt;a smt-button [circular]="true" [icon]="'settings'">&lt;/a>
+&lt;a smt-button [circular]="true" [icon]="'shop'" [basic]="true">&lt;/a>
+&lt;a smt-button [circular]="true" [icon]="'tags'" [basic]="true" [color]="'red'">&lt;/a>
+</codeblock>
+
 <h4 class="ui header">Socials</h4>
 
 <a smt-button *ngFor="let social of lists.social" [social]="social">{{social | capitalize}}</a>
 <smt-divider [hide]="true"></smt-divider>
 <a smt-button *ngFor="let social of lists.social" [social]="social" [circular]="true"></a>
+
+<codeblock>&lt;a smt-button *ngFor="let social of lists.social" [social]="social">...&lt;/a>
+&lt;a smt-button *ngFor="let social of lists.social" [social]="social" [circular]="true">&lt;/a>
+</codeblock>
 
 <h4 class="ui header">Fluid</h4>
 
@@ -99,6 +158,26 @@
     Next
 </a>
 
+<codeblock prismjs="html">&lt;a smt-button [labeled]="true">
+    &lt;a smt-button [color]="'red'" [icon]="'heart'">Like&lt;/a>
+    &lt;a smt-label [basic]="true" [pointing]="'left'" [color]="'red'">
+        1,048
+    &lt;/a>
+&lt;/a>
+&lt;a smt-button [labeled]="true">
+    &lt;a smt-button [basic]="true" [color]="'blue'" [icon]="'fork'">Forks&lt;/a>
+    &lt;a smt-label [basic]="true" [pointing]="'left'" [color]="'blue'">
+        1,048
+    &lt;/a>
+&lt;/a>
+&lt;a smt-button [labeled]="true" [icon]="'pause'">
+    Pause
+&lt;/a>
+&lt;a smt-button [labeled]="{right: true}" [icon]="'right arrow'">
+    Next
+&lt;/a>
+</codeblock>
+
 <h4 class="ui header">Inverted</h4>
 
 <smt-segment [inverted]="true">
@@ -110,6 +189,16 @@
     <a smt-button [inverted]="true" [basic]="true">Basic</a>
     <a smt-button *ngFor="let color of lists.color" [inverted]="true" [basic]="true" [color]="color">{{color | capitalize}}</a>
 </smt-segment>
+
+<codeblock prismjs="html">&lt;smt-segment [inverted]="true">
+    &lt;a smt-button [inverted]="true">Standard&lt;/a>
+    &lt;a smt-button *ngFor="let color of lists.color" [inverted]="true" [color]="color">...&lt;/a>
+&lt;/smt-segment>
+&lt;smt-segment [inverted]="true">
+    &lt;a smt-button [inverted]="true" [basic]="true">Basic&lt;/a>
+    &lt;a smt-button *ngFor="let color of lists.color" [inverted]="true" [basic]="true" [color]="color">...&lt;/a>
+&lt;/smt-segment>
+</codeblock>
 
 <h4 class="ui header">Conditional</h4>
 
@@ -123,11 +212,26 @@
     <a smt-button data-last [color]="'positive'">Deux</a>
 </smt-button-group>
 
+<codeblock prismjs="html">&lt;smt-button-group [conditional]="true">
+    &lt;a smt-button data-first>Cancel&lt;/a>
+    &lt;a smt-button data-last [color]="'positive'">Save&lt;/a>
+&lt;/smt-button-group>
+&lt;smt-button-group [conditional]="{orLabel : 'ou'}">
+    &lt;a smt-button data-first>Un&lt;/a>
+    &lt;a smt-button data-last [color]="'positive'">Deux&lt;/a>
+&lt;/smt-button-group>
+</codeblock>
+
 <h4 class="ui header">Compact</h4>
 
 <a smt-button [compact]="true">Hold</a>
 <a smt-button [compact]="true" [icon]="'pause'" [iconOnly]="true"></a>
 <a smt-button [compact]="true" [labeled]="true" [icon]="'pause'">Pause</a>
+
+<codeblock prismjs="html">&lt;a smt-button [compact]="true">Hold&lt;/a>
+&lt;a smt-button [compact]="true" [icon]="'pause'" [iconOnly]="true">&lt;/a>
+&lt;a smt-button [compact]="true" [labeled]="true" [icon]="'pause'">Pause&lt;/a>
+</codeblock>
 
 <h4 class="ui header">Floated</h4>
 
@@ -136,16 +240,31 @@
     <a smt-button [floated]="'right'">Right</a>
 </smt-segment>
 
+<codeblock prismjs="html">&lt;smt-segment [clearing]="true">
+    &lt;a smt-button [floated]="'left'">Left&lt;/a>
+    &lt;a smt-button [floated]="'right'">Right&lt;/a>
+&lt;/smt-segment>
+</codeblock>
+
 <h4 class="ui header">Vertically attached</h4>
 
 <a smt-button [attached]="'top'">Top</a>
 <smt-segment [attached]="true">Attached segment</smt-segment>
 <a smt-button [attached]="'bottom'">Bottom</a>
 
+<codeblock prismjs="html">&lt;a smt-button [attached]="'top'">Top&lt;/a>
+&lt;smt-segment [attached]="true">Attached segment&lt;/smt-segment>
+&lt;a smt-button [attached]="'bottom'">Bottom&lt;/a>
+</codeblock>
+
 <h4 class="ui header">Horizontally attached</h4>
 
 <button smt-button [attached]="'left'">Left</button>
 <button smt-button [attached]="'right'">Right</button>
+
+<codeblock prismjs="html">&lt;button smt-button [attached]="'left'">Left&lt;/button>
+&lt;button smt-button [attached]="'right'">Right&lt;/button>
+</codeblock>
 
 <h2 class="ui header">Button groups</h2>
 
@@ -158,6 +277,14 @@
     <a smt-button>Photos</a>
 </smt-button-group>
 
+<codeblock prismjs="html">&lt;smt-button-group [vertical]="true">
+    &lt;a smt-button>Feed&lt;/a>
+    &lt;a smt-button>Messages&lt;/a>
+    &lt;a smt-button>Events&lt;/a>
+    &lt;a smt-button>Photos&lt;/a>
+&lt;/smt-button-group>
+</codeblock>
+
 <h4 class="ui header">Icon buttons</h4>
 
 <smt-button-group [icon]="true">
@@ -165,6 +292,13 @@
     <button smt-button [icon]="'pause'"></button>
     <button smt-button [icon]="'shuffle'"></button>
 </smt-button-group>
+
+<codeblock prismjs="html">&lt;smt-button-group [icon]="true">
+    &lt;button smt-button [icon]="'play'">&lt;/button>
+    &lt;button smt-button [icon]="'pause'">&lt;/button>
+    &lt;button smt-button [icon]="'shuffle'">&lt;/button>
+&lt;/smt-button-group>
+</codeblock>
 
 <h4 class="ui header">Labeled icon buttons</h4>
 
@@ -174,6 +308,13 @@
     <a smt-button [icon]="'shuffle'">Shuffle</a>
 </smt-button-group>
 
+<codeblock prismjs="html">&lt;smt-button-group [vertical]="true" [labeled]="true" [icon]="true">
+    &lt;a smt-button [icon]="'pause'">Pause&lt;/a>
+    &lt;a smt-button [icon]="'play'">Play&lt;/a>
+    &lt;a smt-button [icon]="'shuffle'">Shuffle&lt;/a>
+&lt;/smt-button-group>
+</codeblock>
+
 <h4 class="ui header">Mixed group</h4>
 
 <smt-button-group>
@@ -181,6 +322,13 @@
     <button smt-button [icon]="'stop'">Stop</button>
     <button smt-button [labeled]="{right: true}" [icon]="'right chevron'">Forward</button>
 </smt-button-group>
+
+<codeblock prismjs="html">&lt;smt-button-group>
+    &lt;button smt-button [labeled]="true" [icon]="'left chevron'">Back&lt;/button>
+    &lt;button smt-button [icon]="'stop'">Stop&lt;/button>
+    &lt;button smt-button [labeled]="{right: true}" [icon]="'right chevron'">Forward&lt;/button>
+&lt;/smt-button-group>
+</codeblock>
 
 <h4 class="ui header">Equal width</h4>
 
@@ -197,6 +345,20 @@
     <button smt-button>Support</button>
 </smt-button-group>
 
+<codeblock prismjs="html">&lt;smt-button-group [number]="5">
+    &lt;button smt-button>Overview&lt;/button>
+    &lt;button smt-button>Specs&lt;/button>
+    &lt;button smt-button>Warranty&lt;/button>
+    &lt;button smt-button>Reviews&lt;/button>
+    &lt;button smt-button>Support&lt;/button>
+&lt;/smt-button-group>
+&lt;smt-button-group [number]="3">
+    &lt;button smt-button>Overview&lt;/button>
+    &lt;button smt-button>Specs&lt;/button>
+    &lt;button smt-button>Support&lt;/button>
+&lt;/smt-button-group>
+</codeblock>
+
 <h4 class="ui header">Colored buttons</h4>
 
 <smt-button-group [color]="'blue'">
@@ -204,6 +366,13 @@
     <a smt-button>Two</a>
     <a smt-button>Three</a>
 </smt-button-group>
+
+<codeblock prismjs="html">&lt;smt-button-group [color]="'blue'">
+    &lt;a smt-button>One&lt;/a>
+    &lt;a smt-button>Two&lt;/a>
+    &lt;a smt-button>Three&lt;/a>
+&lt;/smt-button-group>
+</codeblock>
 
 <h4 class="ui header">Basic buttons</h4>
 
@@ -224,6 +393,24 @@
     <a smt-button>Three</a>
 </smt-button-group>
 
+<codeblock prismjs="html">&lt;smt-button-group [basic]="true">
+    &lt;a smt-button>One&lt;/a>
+    &lt;a smt-button>Two&lt;/a>
+    &lt;a smt-button>Three&lt;/a>
+&lt;/smt-button-group>
+&lt;smt-button-group>
+    &lt;a smt-button [basic]="true" [color]="'red'">One&lt;/a>
+    &lt;a smt-button [basic]="true" [color]="'blue'">Two&lt;/a>
+    &lt;a smt-button [basic]="true" [color]="'green'">Three&lt;/a>
+&lt;/smt-button-group>
+&lt;smt-divider [hide]="true">&lt;/smt-divider>
+&lt;smt-button-group [basic]="true" [vertical]="true">
+    &lt;a smt-button>One&lt;/a>
+    &lt;a smt-button>Two&lt;/a>
+    &lt;a smt-button>Three&lt;/a>
+&lt;/smt-button-group>
+</codeblock>
+
 <h4 class="ui header">Group sizes</h4>
 
 <smt-button-group [size]="'large'">
@@ -231,15 +418,30 @@
     <a smt-button>Two</a>
     <a smt-button>Three</a>
 </smt-button-group>
-
 <smt-button-group [size]="'small'" [basic]="true" [icon]="true">
     <a smt-button [icon]="'file'"></a>
     <a smt-button [icon]="'save'"></a>
     <a smt-button [icon]="'upload'"></a>
     <a smt-button [icon]="'download'"></a>
 </smt-button-group>
-
 <smt-button-group [size]="'tiny'" [conditional]="true">
     <button smt-button data-first>One</button>
     <button smt-button data-last>Two</button>
 </smt-button-group>
+
+<codeblock prismjs="html">&lt;smt-button-group [size]="'large'">
+    &lt;a smt-button>One&lt;/a>
+    &lt;a smt-button>Two&lt;/a>
+    &lt;a smt-button>Three&lt;/a>
+&lt;/smt-button-group>
+&lt;smt-button-group [size]="'small'" [basic]="true" [icon]="true">
+    &lt;a smt-button [icon]="'file'">&lt;/a>
+    &lt;a smt-button [icon]="'save'">&lt;/a>
+    &lt;a smt-button [icon]="'upload'">&lt;/a>
+    &lt;a smt-button [icon]="'download'">&lt;/a>
+&lt;/smt-button-group>
+&lt;smt-button-group [size]="'tiny'" [conditional]="true">
+    &lt;button smt-button data-first>One&lt;/button>
+    &lt;button smt-button data-last>Two&lt;/button>
+&lt;/smt-button-group>
+</codeblock>

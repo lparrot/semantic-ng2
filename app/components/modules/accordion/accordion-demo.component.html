@@ -15,6 +15,20 @@
     </smt-accordion-item>
 </smt-accordion>
 
+<codeblock prismjs="html">&lt;smt-accordion>
+    &lt;smt-accordion-item [title]="'What is a dog?'">
+        &lt;p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.&lt;/p>
+    &lt;/smt-accordion-item>
+    &lt;smt-accordion-item [title]="'What kinds of dogs are there?'">
+        &lt;p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.&lt;/p>
+    &lt;/smt-accordion-item>
+    &lt;smt-accordion-item [title]="'How do you acquire a dog?'">
+        &lt;p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.&lt;/p>
+        &lt;p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.&lt;/p>
+    &lt;/smt-accordion-item>
+&lt;/smt-accordion>
+</codeblock>
+
 <h4 class="ui header">Styled</h4>
 
 <smt-accordion [styled]="true">
@@ -30,6 +44,20 @@
     </smt-accordion-item>
 </smt-accordion>
 
+<codeblock prismjs="html">&lt;smt-accordion [styled]="true">
+    &lt;smt-accordion-item [title]="'What is a dog?'">
+        &lt;p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.&lt;/p>
+    &lt;/smt-accordion-item>
+    &lt;smt-accordion-item [title]="'What kinds of dogs are there?'">
+        &lt;p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.&lt;/p>
+    &lt;/smt-accordion-item>
+    &lt;smt-accordion-item [title]="'How do you acquire a dog?'">
+        &lt;p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.&lt;/p>
+        &lt;p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.&lt;/p>
+    &lt;/smt-accordion-item>
+&lt;/smt-accordion>
+</codeblock>
+
 <h4 class="ui header">Fluid</h4>
 
 <smt-accordion [styled]="true" [fluid]="true">
@@ -44,6 +72,20 @@
         <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
     </smt-accordion-item>
 </smt-accordion>
+
+<codeblock prismjs="html">&lt;smt-accordion [styled]="true" [fluid]="true">
+    &lt;smt-accordion-item [title]="'What is a dog?'">
+        &lt;p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.&lt;/p>
+    &lt;/smt-accordion-item>
+    &lt;smt-accordion-item [title]="'What kinds of dogs are there?'">
+        &lt;p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.&lt;/p>
+    &lt;/smt-accordion-item>
+    &lt;smt-accordion-item [title]="'How do you acquire a dog?'">
+        &lt;p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.&lt;/p>
+        &lt;p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.&lt;/p>
+    &lt;/smt-accordion-item>
+&lt;/smt-accordion>
+</codeblock>
 
 <h4 class="ui header">Inverted</h4>
 
@@ -61,6 +103,22 @@
         </smt-accordion-item>
     </smt-accordion>
 </smt-segment>
+
+<codeblock prismjs="html">&lt;smt-segment [inverted]="true">
+    &lt;smt-accordion [inverted]="true">
+        &lt;smt-accordion-item [title]="'What is a dog?'">
+            &lt;p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.&lt;/p>
+        &lt;/smt-accordion-item>
+        &lt;smt-accordion-item [title]="'What kinds of dogs are there?'">
+            &lt;p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.&lt;/p>
+        &lt;/smt-accordion-item>
+        &lt;smt-accordion-item [title]="'How do you acquire a dog?'">
+            &lt;p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.&lt;/p>
+            &lt;p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.&lt;/p>
+        &lt;/smt-accordion-item>
+    &lt;/smt-accordion>
+&lt;/smt-segment>
+</codeblock>
 
 <h4 class="ui header">Nested</h4>
 
@@ -92,6 +150,35 @@
     </smt-accordion-item>
 </smt-accordion>
 
+<codeblock prismjs="html">&lt;smt-accordion [styled]="true">
+    &lt;smt-accordion-item [title]="'Level 1A'">
+        &lt;span>Level 1A Contents&lt;/span>
+        &lt;smt-accordion>
+            &lt;smt-accordion-item [title]="'Level 1A-A'">
+                Level 1A-A Contents
+            &lt;/smt-accordion-item>
+            &lt;smt-accordion-item [title]="'Level 1A-B'">
+                Level 1A-B Contents
+                &lt;smt-accordion>
+                    &lt;smt-accordion-item [title]="'Level 1A-A'">
+                        Level 1A-B-A Contents
+                    &lt;/smt-accordion-item>
+                    &lt;smt-accordion-item [title]="'Level 1A-A'">
+                        Level 1A-B-B Contents
+                    &lt;/smt-accordion-item>
+                    &lt;smt-accordion-item [title]="'Level 1A-A'">
+                        Level 1A-B-C Contents
+                    &lt;/smt-accordion-item>
+                &lt;/smt-accordion>
+            &lt;/smt-accordion-item>
+        &lt;/smt-accordion>
+    &lt;/smt-accordion-item>
+    &lt;smt-accordion-item [title]="'Level 1B'">
+        Level 1B Contents
+    &lt;/smt-accordion-item>
+&lt;/smt-accordion>
+</codeblock>
+
 <h4 class="ui header">Field</h4>
 
 <smt-segment>
@@ -116,6 +203,29 @@
     </div>
 </smt-segment>
 
+<codeblock prismjs="html">&lt;smt-segment>
+    &lt;div class="ui form">
+        &lt;div class="two fields">
+            &lt;div class="field">
+                &lt;label>First Name&lt;/label>
+                &lt;input placeholder="First Name" type="text">
+            &lt;/div>
+            &lt;div class="field">
+                &lt;label>Last Name&lt;/label>
+                &lt;input placeholder="Last Name" type="text">
+            &lt;/div>
+        &lt;/div>
+        &lt;smt-accordion [field]="true">
+            &lt;smt-accordion-item [title]="'Optional Details'">
+                &lt;label>Maiden Name&lt;/label>
+                &lt;input placeholder="Maiden Name" type="text">
+            &lt;/smt-accordion-item>
+        &lt;/smt-accordion>
+        &lt;div class="ui secondary submit button">Sign Up&lt;/div>
+    &lt;/div>
+&lt;/smt-segment>
+</codeblock>
+
 <h4 class="ui header">Events</h4>
 
 <smt-accordion [styled]="true" (changeEvent)="changeEvent($event)" (closingEvent)="closingEvent($event)" (closeEvent)="closeEvent($event)" (openEvent)="openEvent($event)" (openingEvent)="openingEvent($event)">
@@ -126,3 +236,13 @@
         <span>Contenu 2</span>
     </smt-accordion-item>
 </smt-accordion>
+
+<codeblock prismjs="html">&lt;smt-accordion [styled]="true" (changeEvent)="changeEvent($event)" (closingEvent)="closingEvent($event)" (closeEvent)="closeEvent($event)" (openEvent)="openEvent($event)" (openingEvent)="openingEvent($event)">
+    &lt;smt-accordion-item [title]="'Titre 1'">
+        &lt;span>Contenu 1&lt;/span>
+    &lt;/smt-accordion-item>
+    &lt;smt-accordion-item [title]="'Titre 2'">
+        &lt;span>Contenu 2&lt;/span>
+    &lt;/smt-accordion-item>
+&lt;/smt-accordion>
+</codeblock>

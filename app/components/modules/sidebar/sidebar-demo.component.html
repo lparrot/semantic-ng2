@@ -9,6 +9,9 @@
     <button smt-button [active]="position == 'bottom'" (click)="selectPosition('bottom')">Bottom</button>
 </smt-button-group>
 
+<codeblock prismjs="html">
+</codeblock>
+
 <h4 class="ui header">Transition</h4>
 
 <smt-button-group>
@@ -47,6 +50,27 @@
         <span>Videos</span>
     </a>
 </smt-sidebar>
+
+<codeblock prismjs="html">&lt;smt-sidebar #sidebarDemo [position]="position" [transition]="transition" (changeEvent)="changeEvent()" (hiddenEvent)="hiddenEvent()" (hideEvent)="hideEvent()" (showEvent)="showEvent()" (visibleEvent)="visibleEvent()">
+    &lt;smt-menu [inverted]="true" [icon]="true" [vertical]="isVertical()" [labeled]="true">&lt;/smt-menu>
+    &lt;a smt-menu-item>
+        &lt;i smt-icon="users">&lt;/i>
+        &lt;span>Users&lt;/span>
+    &lt;/a>
+    &lt;a smt-menu-item>
+        &lt;i smt-icon="gamepad">&lt;/i>
+        &lt;span>Games&lt;/span>
+    &lt;/a>
+    &lt;a smt-menu-item>
+        &lt;i smt-icon="camera">&lt;/i>
+        &lt;span>Channels&lt;/span>
+    &lt;/a>
+    &lt;a smt-menu-item>
+        &lt;i smt-icon="play">&lt;/i>
+        &lt;span>Videos&lt;/span>
+    &lt;/a>
+&lt;/smt-sidebar>
+</codeblock>
 
 <h4 class="ui header">Using a custom context</h4>
 
@@ -90,3 +114,41 @@
         </div>
     </div>
 </div>
+
+<codeblock prismjs="html">&lt;div class="ui top attached segment">
+    &lt;button smt-button [color]="'primary'" (click)="sidebarCustomContext.toggle()">Toggle custom context sidebar&lt;/button>
+&lt;/div>
+&lt;div class="ui bottom attached segment pushable">
+    &lt;smt-sidebar #sidebarCustomContext [visible]="true" [context]="'.bottom.segment'">
+        &lt;smt-menu [inverted]="true" [vertical]="true" [labeled]="true">&lt;/smt-menu>
+        &lt;a smt-menu-item>
+            &lt;i class="home icon">&lt;/i>
+            &lt;span>Home&lt;/span>
+        &lt;/a>
+        &lt;a smt-menu-item>
+            &lt;i class="block layout icon">&lt;/i>
+            &lt;span>Topics&lt;/span>
+        &lt;/a>
+        &lt;a smt-menu-item>
+            &lt;i class="smile icon">&lt;/i>
+            &lt;span>Friends&lt;/span>
+        &lt;/a>
+        &lt;a smt-menu-item>
+            &lt;i class="calendar icon">&lt;/i>
+            &lt;span>History&lt;/span>
+        &lt;/a>
+    &lt;/smt-sidebar>
+    &lt;div class="pusher">
+        &lt;div class="ui basic segment">
+            &lt;h3 class="ui header">Application Content&lt;/h3>
+            &lt;img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+            &lt;div class="ui hidden divider">&lt;/div>
+            &lt;img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+            &lt;div class="ui hidden divider">&lt;/div>
+            &lt;img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+            &lt;div class="ui hidden divider">&lt;/div>
+            &lt;img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+</codeblock>

@@ -18,6 +18,23 @@
     </smt-card-extra>
 </smt-card>
 
+<codeblock prismjs="html">&lt;smt-card [color]="'red'">
+    &lt;smt-card-image [image]="cards[0].photo">&lt;/smt-card-image>
+    &lt;smt-card-content [header]="cards[0].header">
+        &lt;smt-card-meta [floated]="'right'">
+            &lt;a>Married with&lt;/a>
+            &lt;img smt-image [avatar]="true" src="/app/assets/img/semantic/avatar/small/elliot.jpg"> Elliot
+        &lt;/smt-card-meta>
+    &lt;/smt-card-content>
+    &lt;smt-card-extra>
+        &lt;smt-button-group [number]="2">
+            &lt;a smt-button [color]="'primary'">Validate&lt;/a>
+            &lt;a smt-button [color]="'negative'">Delete&lt;/a>
+        &lt;/smt-button-group>
+    &lt;/smt-card-extra>
+&lt;/smt-card>
+</codeblock>
+
 <h4 class="ui header">Card group</h4>
 
 <smt-card-group>
@@ -73,3 +90,58 @@
         <a smt-button [attached]="'bottom'" [color]="'primary'">Extra content</a>
     </smt-card>
 </smt-card-group>
+
+<codeblock prismjs="html">&lt;smt-card-group>
+    &lt;smt-card>
+        &lt;smt-card-content [header]="cards.header1">
+            &lt;smt-card-meta>
+                &lt;a>Developer&lt;/a>
+            &lt;/smt-card-meta>
+            &lt;span>Content here...&lt;/span>
+        &lt;/smt-card-content>
+        &lt;smt-card-image [image]="cards[1].photo">&lt;/smt-card-image>
+        &lt;smt-card-content [header]="cards[1].header">
+            &lt;smt-card-meta>
+                &lt;span>1st in France&lt;/span>
+            &lt;/smt-card-meta>
+            &lt;span>Content here...&lt;/span>
+        &lt;/smt-card-content>
+        &lt;smt-card-extra>
+            &lt;a>
+                &lt;i smt-icon="users">&lt;/i>
+                &lt;span>Show users&lt;/span>
+            &lt;/a>
+        &lt;/smt-card-extra>
+    &lt;/smt-card>
+    &lt;smt-card>
+        &lt;smt-card-content [header]="cards[2].header1">
+            &lt;smt-card-meta>
+                &lt;a>Rank : 1st&lt;/a>
+            &lt;/smt-card-meta>
+            &lt;span>Content here...&lt;/span>
+        &lt;/smt-card-content>
+        &lt;smt-card-content [header]="cards[2].header2">
+            &lt;smt-card-meta>
+                &lt;span>Rank : 2nd&lt;/span>
+            &lt;/smt-card-meta>
+            &lt;span>Content here...&lt;/span>
+        &lt;/smt-card-content>
+        &lt;smt-card-extra>
+            &lt;smt-button-group [number]="2">
+                &lt;a smt-button [basic]="true" [color]="'blue'">Ok&lt;/a>
+                &lt;a smt-button [basic]="true" [color]="'red'">Reset&lt;/a>
+            &lt;/smt-button-group>
+        &lt;/smt-card-extra>
+    &lt;/smt-card>
+    &lt;smt-card>
+        &lt;smt-card-content [header]="cards[3].header">
+            &lt;smt-card-meta>
+                &lt;a>Manager&lt;/a>
+            &lt;/smt-card-meta>
+            &lt;span>Content here...&lt;/span>
+        &lt;/smt-card-content>
+        &lt;smt-card-image [image]="cards[3].photo">&lt;/smt-card-image>
+        &lt;a smt-button [attached]="'bottom'" [color]="'primary'">Extra content&lt;/a>
+    &lt;/smt-card>
+&lt;/smt-card-group>
+</codeblock>

@@ -9,6 +9,12 @@
     <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/ade.jpg">
 </smt-reveal>
 
+<codeblock prismjs="html">&lt;smt-reveal [fade]="true" [size]="'small'">
+    &lt;img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    &lt;img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/ade.jpg">
+&lt;/smt-reveal>
+</codeblock>
+
 <h4 class="ui header">Move</h4>
 
 <smt-reveal [move]="'left'" [size]="'small'">
@@ -16,26 +22,44 @@
     <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/chris.jpg">
 </smt-reveal>
 
-<smt-divider [hide]="true"></smt-divider>
+<codeblock prismjs="html">&lt;smt-reveal [move]="'left'" [size]="'small'">
+    &lt;img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    &lt;img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/chris.jpg">
+&lt;/smt-reveal>
+</codeblock>
 
 <smt-reveal [move]="'right'" [size]="'small'">
     <img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
     <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/jenny.jpg">
 </smt-reveal>
 
-<smt-divider [hide]="true"></smt-divider>
+<codeblock prismjs="html">&lt;smt-reveal [move]="'right'" [size]="'small'">
+    &lt;img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    &lt;img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/jenny.jpg">
+&lt;/smt-reveal>
+</codeblock>
 
 <smt-reveal [move]="'up'" [size]="'small'">
     <img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
     <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/justen.jpg">
 </smt-reveal>
 
-<smt-divider [hide]="true"></smt-divider>
+<codeblock prismjs="html">&lt;smt-reveal [move]="'up'" [size]="'small'">
+    &lt;img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    &lt;img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/justen.jpg">
+&lt;/smt-reveal>
+</codeblock>
 
 <smt-reveal [move]="'down'" [size]="'small'">
     <img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
     <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/nan.jpg">
 </smt-reveal>
+
+<codeblock prismjs="html">&lt;smt-reveal [move]="'down'" [size]="'small'">
+    &lt;img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    &lt;img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/nan.jpg">
+&lt;/smt-reveal>
+</codeblock>
 
 <h4 class="ui header">Rotate</h4>
 
@@ -51,6 +75,16 @@
     <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/veronika.jpg">
 </smt-reveal>
 
+<codeblock prismjs="html">&lt;smt-reveal [rotate]="'right'" [circular]="true" [size]="'small'">
+    &lt;img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    &lt;img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/stevie.jpg">
+&lt;/smt-reveal>
+&lt;smt-reveal [rotate]="'left'" [circular]="true" [size]="'small'">
+    &lt;img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    &lt;img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/veronika.jpg">
+&lt;/smt-reveal>
+</codeblock>
+
 <h2 class="ui header">States</h2>
 
 <h4 class="ui header">Active</h4>
@@ -62,6 +96,14 @@
     <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/nan.jpg">
 </smt-reveal>
 
+<codeblock prismjs="html">&lt;smt-checkbox [(model)]="revealActive" [checkboxStyle]="'toggle'">&lt;/smt-checkbox>
+
+&lt;smt-reveal [move]="'left'" [active]="revealActive" [size]="'small'">
+    &lt;img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+    &lt;img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/nan.jpg">
+&lt;/smt-reveal>
+</codeblock>
+
 <h2 class="ui header">Variations</h2>
 
 <h4 class="ui header">Instant</h4>
@@ -72,3 +114,11 @@
         <img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/chris.jpg">
     </smt-reveal>
 </smt-container>
+
+<codeblock prismjs="html">&lt;smt-container [text]="true">
+    &lt;smt-reveal [instant]="true" [move]="'left'">
+        &lt;img smt-reveal-visible src="/app/assets/img/semantic/wireframe/square-image.png">
+        &lt;img smt-reveal-hidden src="/app/assets/img/semantic/avatar/large/chris.jpg">
+    &lt;/smt-reveal>
+&lt;/smt-container>
+</codeblock>

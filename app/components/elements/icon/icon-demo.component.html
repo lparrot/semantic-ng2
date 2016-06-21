@@ -6,11 +6,18 @@
 
 <i smt-icon="users" [disabled]="true"></i>
 
+<codeblock prismjs="html">&lt;i smt-icon="users" [disabled]="true">&lt;/i></codeblock>
+
 <h4 class="ui header">Loading</h4>
 
 <i smt-icon="spinner" [loading]="true"></i>
 <i smt-icon="notched circle" [loading]="true"></i>
 <i smt-icon="asterisk" [loading]="true"></i>
+
+<codeblock prismjs="html">&lt;i smt-icon="spinner" [loading]="true">&lt;/i>
+&lt;i smt-icon="notched circle" [loading]="true">&lt;/i>
+&lt;i smt-icon="asterisk" [loading]="true">&lt;/i>
+</codeblock>
 
 <h2 class="ui header">Variations</h2>
 
@@ -19,6 +26,11 @@
 <span>Tight spacing</span>
 <i smt-icon="help" [fitted]="true"></i>
 <span>Tight spacing</span>
+
+<codeblock prismjs="html">&lt;span>Tight spacing&lt;/span>
+&lt;i smt-icon="help" [fitted]="true">&lt;/i>
+&lt;span>Tight spacing&lt;/span>
+</codeblock>
 
 <h4>Size</h4>
 
@@ -31,10 +43,24 @@
 <i smt-icon="home" [size]="'huge'"></i>
 <i smt-icon="home" [size]="'massive'"></i>
 
+<codeblock prismjs="html">&lt;i smt-icon="home" [size]="'mini'">&lt;/i>
+&lt;i smt-icon="home" [size]="'tiny'">&lt;/i>
+&lt;i smt-icon="home" [size]="'small'">&lt;/i>
+&lt;i smt-icon="home">&lt;/i>
+&lt;i smt-icon="home" [size]="'large'">&lt;/i>
+&lt;i smt-icon="home" [size]="'big'">&lt;/i>
+&lt;i smt-icon="home" [size]="'huge'">&lt;/i>
+&lt;i smt-icon="home" [size]="'massive'">&lt;/i>
+</codeblock>
+
 <h4 class="ui header">Link</h4>
 
 <i smt-icon="close" [link]="true"></i>
 <i smt-icon="help" [link]="true"></i>
+
+<codeblock prismjs="html">&lt;i smt-icon="close" [link]="true">&lt;/i>
+&lt;i smt-icon="help" [link]="true">&lt;/i>
+</codeblock>
 
 <h4 class="ui header">Rotate</h4>
 
@@ -43,12 +69,24 @@
 <i smt-icon="cloud" [rotate]="'left'"></i>
 <i smt-icon="cloud" [rotate]="'right'"></i>
 
+<codeblock prismjs="html">&lt;i smt-icon="cloud">&lt;/i>
+&lt;i smt-icon="cloud" [rotate]="'flip'">&lt;/i>
+&lt;i smt-icon="cloud" [rotate]="'left'">&lt;/i>
+&lt;i smt-icon="cloud" [rotate]="'right'">&lt;/i>
+</codeblock>
+
 <h4 class="ui header">Circular</h4>
 
 <i smt-icon="users" [circular]="true"></i>
 <i smt-icon="users" [circular]="true" [color]="'teal'"></i>
 <i smt-icon="users" [circular]="true" [inverted]="true"></i>
 <i smt-icon="users" [circular]="true" [inverted]="true" [color]="'teal'"></i>
+
+<codeblock prismjs="html">&lt;i smt-icon="users" [circular]="true">&lt;/i>
+&lt;i smt-icon="users" [circular]="true" [color]="'teal'">&lt;/i>
+&lt;i smt-icon="users" [circular]="true" [inverted]="true">&lt;/i>
+&lt;i smt-icon="users" [circular]="true" [inverted]="true" [color]="'teal'">&lt;/i>
+</codeblock>
 
 <h4 class="ui header">Bordered</h4>
 
@@ -57,9 +95,17 @@
 <i smt-icon="users" [bordered]="true" [inverted]="true"></i>
 <i smt-icon="users" [bordered]="true" [inverted]="true" [color]="'teal'"></i>
 
+<codeblock prismjs="html">&lt;i smt-icon="users" [bordered]="true">&lt;/i>
+&lt;i smt-icon="users" [bordered]="true" [color]="'teal'">&lt;/i>
+&lt;i smt-icon="users" [bordered]="true" [inverted]="true">&lt;/i>
+&lt;i smt-icon="users" [bordered]="true" [inverted]="true" [color]="'teal'">&lt;/i>
+</codeblock>
+
 <h4 class="ui header">Colored</h4>
 
 <i *ngFor="let color of lists.color" smt-icon="users" [color]="color"></i>
+
+<codeblock prismjs="html">&lt;i *ngFor="let color of lists.color" smt-icon="users" [color]="color">&lt;/i></codeblock>
 
 <h2 class="ui header">Groups</h2>
 
@@ -80,6 +126,20 @@
     <i smt-icon="user"></i>
 </smt-icon-group>
 
+<codeblock prismjs="html">&lt;smt-icon-group [size]="'huge'">
+    &lt;i smt-icon="thin circle" [size]="'big'">&lt;/i>
+    &lt;i smt-icon="user">&lt;/i>
+&lt;/smt-icon-group>
+&lt;smt-icon-group [size]="'huge'">
+    &lt;i smt-icon="dont" [color]="'red'" [size]="'big'">&lt;/i>
+    &lt;i smt-icon="user" [color]="'black'">&lt;/i>
+&lt;/smt-icon-group>
+&lt;smt-icon-group [size]="'huge'">
+    &lt;i smt-icon="sun" [loading]="true" [size]="'big'">&lt;/i>
+    &lt;i smt-icon="user">&lt;/i>
+&lt;/smt-icon-group>
+</codeblock>
+
 <h4 class="ui header">Corner icon</h4>
 
 <smt-icon-group [size]="'huge'">
@@ -94,3 +154,16 @@
     </smt-icon-group>
     <span>Add on twitter</span>
 </h2>
+
+<codeblock prismjs="html">&lt;smt-icon-group [size]="'huge'">
+    &lt;i smt-icon="puzzle">&lt;/i>
+    &lt;i smt-icon="add" [corner]="true">&lt;/i>
+&lt;/smt-icon-group>
+&lt;h2 class="ui header">
+    &lt;smt-icon-group [size]="'large'">
+        &lt;i smt-icon="twitter">&lt;/i>
+        &lt;i smt-icon="add" [corner]="true" [inverted]="true">&lt;/i>
+    &lt;/smt-icon-group>
+    &lt;span>Add on twitter&lt;/span>
+&lt;/h2>
+</codeblock>
