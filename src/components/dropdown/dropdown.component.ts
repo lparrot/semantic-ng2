@@ -58,7 +58,6 @@ export class DropdownComponent {
         this.options.onRemove = (value, text, choice) => {
             this.value.splice(this.value.indexOf(value), 1);
             this.valueChange.emit(this.value);
-            console.log(this.value);
         };
         if (!this.selection) {
             this.options.action = "select";
