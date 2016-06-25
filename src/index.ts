@@ -11,6 +11,7 @@ import { DropdownComponent, DropdownOptionComponent } from "./components/dropdow
 import { FlagComponent } from "./components/flag/index";
 import { FormComponent } from "./components/form/index";
 import { GravatarDirective } from "./components/gravatar/index";
+import { HeaderComponent } from "./components/header/index";
 import { IconComponent, IconGroupComponent } from "./components/icon/index";
 import { ImageComponent } from "./components/image/index";
 import { LabelComponent } from "./components/label/index";
@@ -38,6 +39,7 @@ export const SMT_DIRECTIVES:any[] = [
     FlagComponent,
     FormComponent,
     GravatarDirective,
+    HeaderComponent,
     IconComponent, IconGroupComponent,
     ImageComponent,
     LabelComponent,

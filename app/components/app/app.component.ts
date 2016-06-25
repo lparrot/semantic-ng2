@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { RouteConfig, ROUTER_DIRECTIVES } from "@angular/router-deprecated";
 import { SMT_DIRECTIVES, HttpService, SettingsService } from "../../../src/index";
 import { HomeDemoComponent } from "../home/index";
-import { ButtonDemoComponent, ContainerDemoComponent, FlagDemoComponent, IconDemoComponent, RevealDemoComponent, SegmentDemoComponent } from "../elements/index";
+import { ButtonDemoComponent, ContainerDemoComponent, FlagDemoComponent, HeaderDemoComponent, IconDemoComponent, RevealDemoComponent, SegmentDemoComponent } from "../elements/index";
 import { MenuDemoComponent } from "../collections/index";
 import { AccordionDemoComponent, CheckboxDemoComponent, DropdownDemoComponent, ModalDemoComponent, ProgressDemoComponent, SidebarDemoComponent } from "../modules/index";
 import { DatatableDemoComponent } from "../customs/index";
@@ -17,6 +17,7 @@ declare var $:any, toastr:any;
     { path: '/elements/button', name: 'ButtonDemo', component: ButtonDemoComponent },
     { path: '/elements/container', name: 'ContainerDemo', component: ContainerDemoComponent },
     { path: '/elements/flag', name: 'FlagDemo', component: FlagDemoComponent },
+    { path: '/elements/header', name: 'HeaderDemo', component: HeaderDemoComponent },
     { path: '/elements/icon', name: 'IconDemo', component: IconDemoComponent },
     { path: '/elements/reveal', name: 'RevealDemo', component: RevealDemoComponent },
     { path: '/elements/segment', name: 'SegmentDemo', component: SegmentDemoComponent },
@@ -49,6 +50,9 @@ export class AppComponent {
         }, {
             label: 'Flag',
             route: [ 'FlagDemo' ]
+        }, {
+            label: 'Header',
+            route: [ 'HeaderDemo' ]
         }, {
             label: 'Icon',
             route: [ 'IconDemo' ]

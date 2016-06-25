@@ -163,4 +163,8 @@ export class ClassUtil {
         return classToFormat.trim().toLowerCase();
     }
 
+    removeClass(classToRemove:string) {
+        this.classes = this.classes.splice(this.classes.indexOf(classToRemove) - 1, 1);
+    }
+
 }

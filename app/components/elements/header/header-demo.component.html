@@ -1,0 +1,414 @@
+<demo-header [title]="'Header'" [site]="'elements/header.html'" [wiki]="'Header'"></demo-header>
+
+<h2 class="ui header">Types</h2>
+
+<h4 class="ui header">Page headers</h4>
+
+<div class="ui segment">
+    <h1 smt-header>First header</h1>
+    <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+    <h2 smt-header>Second header</h2>
+    <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+    <h3 smt-header>Third header</h3>
+    <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+    <h4 smt-header>Fourth header</h4>
+    <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+    <h5 smt-header>Fifth header</h5>
+    <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+</div>
+
+<codeblock prismjs="html">&lt;h1 smt-header>First header&lt;/h1>
+&lt;h2 smt-header>Second header&lt;/h2>
+&lt;h3 smt-header>Third header&lt;/h3>
+&lt;h4 smt-header>Fourth header&lt;/h4>
+&lt;h5 smt-header>Fifth header&lt;/h5>
+</codeblock>
+
+<h4 class="ui header">Content headers</h4>
+
+<div class="ui segment">
+    <div smt-header [size]="'huge'">Huge header</div>
+    <div smt-header [size]="'large'">Large header</div>
+    <div smt-header [size]="'medium'">Medium header</div>
+    <div smt-header [size]="'small'">Small header</div>
+    <div smt-header [size]="'tiny'">Tiny header</div>
+</div>
+
+<codeblock prismjs="html">&lt;div smt-header [size]="'huge'">Huge header&lt;/div>
+&lt;div smt-header [size]="'large'">Large header&lt;/div>
+&lt;div smt-header [size]="'medium'">Medium header&lt;/div>
+&lt;div smt-header [size]="'small'">Small header&lt;/div>
+&lt;div smt-header [size]="'tiny'">Tiny header&lt;/div>
+</codeblock>
+
+<h4 class="ui header">Icon headers</h4>
+
+<div class="ui segment">
+    <h2 smt-header [icon]="true">
+        <i smt-icon="settings"></i>
+        <div class="content">
+            <span>Account Settings</span>
+            <div smt-header [sub]="true">Manage your account settings and set e-mail preferences.</div>
+        </div>
+    </h2>
+</div>
+
+<codeblock prismjs="html">&lt;h2 smt-header [icon]="true">
+    &lt;i smt-icon="settings">&lt;/i>
+    &lt;div class="content">
+        &lt;span>Account Settings&lt;/span>
+        &lt;div smt-header [sub]="true">Manage your account settings and set e-mail preferences.&lt;/div>
+    &lt;/div>
+&lt;/h2>
+</codeblock>
+
+<div class="ui segment">
+    <h2 smt-header [aligned]="'center'" [icon]="true">
+        <i smt-icon="users" [circular]="true"></i>
+        <span>Friends</span>
+    </h2>
+</div>
+
+<codeblock prismjs="html">&lt;h2 smt-header [aligned]="'center'" [icon]="true">
+    &lt;i smt-icon="users" [circular]="true">&lt;/i>
+    &lt;span>Friends&lt;/span>
+&lt;/h2>
+</codeblock>
+
+<h4 class="ui header">Sub headers</h4>
+
+<div class="ui segment">
+    <h2 smt-header [sub]="true">
+        <span>Price</span>
+    </h2>
+    <span>$10.99</span>
+</div>
+
+<codeblock prismjs="html">&lt;h2 smt-header [sub]="true">
+    &lt;span>Price&lt;/span>
+&lt;/h2>
+&lt;span>$10.99&lt;/span>
+</codeblock>
+
+<div class="ui segment">
+    <div class="ui horizontal list">
+        <div class="item">
+            <img smt-image [size]="'mini'" [circular]="true" src="/app/assets/img/semantic/avatar2/small/molly.png">
+            <div class="content">
+                <div smt-header [sub]="true">Molly</div>
+                <span>Coordinator</span>
+            </div>
+        </div>
+        <div class="item">
+            <img smt-image [size]="'mini'" [circular]="true" src="/app/assets/img/semantic/avatar2/small/elyse.png">
+            <div class="content">
+                <div smt-header [sub]="true">Elyse</div>
+                <span>Developer</span>
+            </div>
+        </div>
+        <div class="item">
+            <img smt-image [size]="'mini'" [circular]="true" src="/app/assets/img/semantic/avatar2/small/eve.png">
+            <div class="content">
+                <div smt-header [sub]="true">Eve</div>
+                <span>Project Manager</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<codeblock prismjs="html">&lt;div class="ui horizontal list">
+    &lt;div class="item">
+        &lt;img smt-image [size]="'mini'" [circular]="true" src="/app/assets/img/semantic/avatar2/small/molly.png">
+        &lt;div class="content">
+            &lt;div smt-header [sub]="true">Molly&lt;/div>
+            &lt;span>Coordinator&lt;/span>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="item">
+        &lt;img smt-image [size]="'mini'" [circular]="true" src="/app/assets/img/semantic/avatar2/small/elyse.png">
+        &lt;div class="content">
+            &lt;div smt-header [sub]="true">Elyse&lt;/div>
+            &lt;span>Developer&lt;/span>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="item">
+        &lt;img smt-image [size]="'mini'" [circular]="true" src="/app/assets/img/semantic/avatar2/small/eve.png">
+        &lt;div class="content">
+            &lt;div smt-header [sub]="true">Eve&lt;/div>
+            &lt;span>Project Manager&lt;/span>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+</codeblock>
+
+<h2 class="ui header">Content</h2>
+
+<h4 class="ui header">Image</h4>
+
+<div class="ui segment">
+    <h2 smt-header>
+        <img smt-image src="/app/assets/img/semantic/icons/school.png">
+        <div class="content">
+            <span>Learn More</span>
+        </div>
+    </h2>
+    <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+</div>
+
+<codeblock prismjs="html">&lt;h2 smt-header>
+    &lt;img smt-image src="/app/assets/img/semantic/icons/school.png">
+    &lt;div class="content">
+        &lt;span>Learn More&lt;/span>
+    &lt;/div>
+&lt;/h2>
+</codeblock>
+
+<div class="ui segment">
+    <h2 smt-header>
+        <img smt-image [circular]="true" src="/app/assets/img/semantic/avatar2/large/patrick.png">
+        <span>Patrick</span>
+    </h2>
+    <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+</div>
+
+<codeblock prismjs="html">&lt;h2 smt-header>
+    &lt;img smt-image [circular]="true" src="/app/assets/img/semantic/avatar2/large/patrick.png">
+    &lt;span>Patrick&lt;/span>
+&lt;/h2>
+</codeblock>
+
+<div class="ui segment">
+    <h2 smt-header>
+        <img src="/app/assets/img/semantic/icons/plugin.png">
+        <div class="content">
+            <span>Plug-ins</span>
+            <div smt-header [sub]="true">Check out our plug-in marketplace</div>
+        </div>
+    </h2>
+    <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+</div>
+
+<codeblock prismjs="html">&lt;h2 smt-header>
+    &lt;img src="/app/assets/img/semantic/icons/plugin.png">
+    &lt;div class="content">
+        &lt;span>Plug-ins&lt;/span>
+        &lt;div smt-header [sub]="true">Check out our plug-in marketplace&lt;/div>
+    &lt;/div>
+&lt;/h2>
+</codeblock>
+
+<h4 class="ui header">Icon</h4>
+
+<div class="ui segment">
+    <h2 smt-header>
+        <i smt-icon="plug"></i>
+        <div class="content">
+            <span>Uptime Guarantee</span>
+        </div>
+    </h2>
+    <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+</div>
+
+<codeblock prismjs="html">&lt;h2 smt-header>
+    &lt;i smt-icon="plug">&lt;/i>
+    &lt;div class="content">
+        &lt;span>Uptime Guarantee&lt;/span>
+    &lt;/div>
+&lt;/h2>
+</codeblock>
+
+<div class="ui segment">
+    <h2 smt-header>
+        <i smt-icon="settings"></i>
+        <div class="content">
+            <span>Account Settings</span>
+            <div smt-header [sub]="true">Manage your preferences</div>
+        </div>
+    </h2>
+    <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+</div>
+
+<codeblock prismjs="html">&lt;h2 smt-header>
+    &lt;i smt-icon="settings">&lt;/i>
+    &lt;div class="content">
+        &lt;span>Account Settings&lt;/span>
+        &lt;div smt-header [sub]="true">Manage your preferences&lt;/div>
+    &lt;/div>
+&lt;/h2>
+</codeblock>
+
+<h4 class="ui header">Subheader</h4>
+
+<div class="ui segment">
+    <h2 smt-header>
+        <span>Account Settings</span>
+        <div smt-header [sub]="true">Manage your account settings and set e-mail preferences.</div>
+    </h2>
+</div>
+
+<codeblock prismjs="html">&lt;h2 smt-header>
+    &lt;span>Account Settings&lt;/span>
+    &lt;div smt-header [sub]="true">Manage your account settings and set e-mail preferences.&lt;/div>
+&lt;/h2>
+</codeblock>
+
+<h2 class="ui header">States</h2>
+
+<h4 class="ui header">Disabled</h4>
+
+<div class="ui segment">
+    <div smt-header [disabled]="true">
+        <span>Disabled Header</span>
+    </div>
+    <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+</div>
+
+<codeblock prismjs="html">&lt;div smt-header [disabled]="true">
+    &lt;span>Disabled Header&lt;/span>
+&lt;/div>
+</codeblock>
+
+<h2 class="ui header">Variations</h2>
+
+<h4 class="ui header">Dividing</h4>
+
+<<div class="ui segment">
+    <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+    <h3 class="ui dividing header">
+        <span>Dividing Header</span>
+    </h3>
+    <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+</div>
+
+<codeblock prismjs="html">&lt;img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+    &lt;h3 class="ui dividing header">
+        &lt;span>Dividing Header&lt;/span>
+    &lt;/h3>
+    &lt;img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/short-paragraph.png">
+</codeblock>
+
+<h4 class="ui header">Block</h4>
+
+<div class="ui segment">
+    <h3 smt-header [block]="true">
+        <span>Block Header</span>
+    </h3>
+    <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/media-paragraph.png">
+</div>
+
+<codeblock prismjs="html">&lt;h3 smt-header [block]="true">
+    &lt;span>Block Header&lt;/span>
+&lt;/h3>
+</codeblock>
+
+<h4 class="ui header">Attached</h4>
+
+<div class="ui segment">
+    <h3 smt-header [attached]="'top'">
+        Top attached
+    </h3>
+    <smt-segment [attached]="true">
+        <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/paragraph.png">
+    </smt-segment>
+    <h3 smt-header [attached]="true">
+        Attached
+    </h3>
+    <smt-segment [attached]="true">
+        <img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/paragraph.png">
+    </smt-segment>
+    <h3 smt-header [attached]="'bottom'">
+        Bottom attached
+    </h3>
+</div>
+
+<codeblock prismjs="html">&lt;h3 smt-header [attached]="'top'">
+    Top attached
+&lt;/h3>
+&lt;smt-segment [attached]="true">
+    &lt;img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/paragraph.png">
+&lt;/smt-segment>
+&lt;h3 smt-header [attached]="true">
+    Attached
+&lt;/h3>
+&lt;smt-segment [attached]="true">
+    &lt;img smt-image [wireframe]="true" src="/app/assets/img/semantic/wireframe/paragraph.png">
+&lt;/smt-segment>
+&lt;h3 smt-header [attached]="'bottom'">
+    Bottom attached
+&lt;/h3>
+</codeblock>
+
+<h4 class="ui header">Floating</h4>
+
+<div class="ui segment">
+    <smt-segment [clearing]="true">
+        <h3 smt-header [float]="'right'">
+            Go Forward
+        </h3>
+        <h3 smt-header [float]="'left'">
+            Go Back
+        </h3>
+    </smt-segment>
+</div>
+
+<codeblock prismjs="html">&lt;smt-segment [clearing]="true">
+    &lt;h3 smt-header [float]="'right'">
+        Go Forward
+    &lt;/h3>
+    &lt;h3 smt-header [float]="'left'">
+        Go Back
+    &lt;/h3>
+&lt;/smt-segment>
+</codeblock>
+
+<h4 class="ui header">Text alignment</h4>
+
+<div class="ui segment">
+    <h3 smt-header [aligned]="'right'">
+        Right
+    </h3>
+    <h3 smt-header [aligned]="'left'">
+        Left
+    </h3>
+    <h3 smt-header [aligned]="'justified'">
+        This should take up the full width even if only one line
+    </h3>
+    <h3 smt-header [aligned]="'center'">
+        Center
+    </h3>
+</div>
+
+<codeblock prismjs="html">&lt;h3 smt-header [aligned]="'right'">
+    Right
+&lt;/h3>
+&lt;h3 smt-header [aligned]="'left'">
+    Left
+&lt;/h3>
+&lt;h3 smt-header [aligned]="'justified'">
+    This should take up the full width even if only one line
+&lt;/h3>
+&lt;h3 smt-header [aligned]="'center'">
+    Center
+&lt;/h3>
+</codeblock>
+
+<h4 class="ui header">Colored</h4>
+
+<div class="ui segment">
+    <h4 *ngFor="let color of lists.color" smt-header [color]="color">{{color | capitalize}}</h4>
+</div>
+
+<codeblock prismjs="html">&lt;h4 *ngFor="let color of lists.color" smt-header [color]="color">...&lt;/h4></codeblock>
+
+<h4 class="ui header">Inverted</h4>
+
+<div class="ui segment">
+    <smt-segment [inverted]="true">
+        <h4 *ngFor="let color of lists.color" smt-header [color]="color" [inverted]="true">{{color | capitalize}}</h4>
+    </smt-segment>
+</div>
+
+<codeblock prismjs="html">&lt;smt-segment [inverted]="true">
+    &lt;h4 *ngFor="let color of lists.color" smt-header [color]="color" [inverted]="true">...&lt;/h4>
+&lt;/smt-segment>
+</codeblock>

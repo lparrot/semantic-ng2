@@ -8,6 +8,7 @@ export * from "./divider/index";
 export * from "./flag/index";
 export * from "./form/index";
 export * from "./gravatar/index";
+export * from "./header/index";
 export * from "./icon/index";
 export * from "./image/index";
 export * from "./label/index";
