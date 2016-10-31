@@ -72,6 +72,6 @@
     "semantic-ui",
     "angular2"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "bugs": "https://github.com/lparrot/semantic-ng2/issues"
 }
